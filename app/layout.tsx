@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     siteName: "DWS Hotels",
     images: [
       {
-        url: "/superior-home.jpeg",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "DWS Hotels Luxury Accommodation",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "DWS Hotels - Find the Best Stay",
     description: "Experience luxury and comfort in Abraka.",
-    images: ["/superior-home.jpeg"],
+    images: ["/og-image.png"],
   },
   robots: {
     index: true,
