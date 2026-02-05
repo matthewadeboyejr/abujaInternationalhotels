@@ -3,7 +3,7 @@ export const ROOMS = [
         id: 1,
         category: 'Deluxe',
         image: '/deluxe-home.jpeg',
-        images: ['/deluxe-home.jpeg', '/superior-home.jpeg', '/executive-home.jpeg', '/royal-home.jpeg'],
+        images: ['/deluxe-home.jpeg', '/deluxe-1.jpeg', '/deluxe-2.jpeg', '/deluxe-home.jpeg', '/deluxe-toilet.jpeg',],
         date: 'Dec 19, 2023',
         title: 'Deluxe Room for you',
         price: 'NGN40,000',
@@ -27,7 +27,7 @@ export const ROOMS = [
         id: 2,
         category: 'Superior',
         image: '/superior-home.jpeg',
-        images: ['/superior-home.jpeg', '/deluxe-home.jpeg', '/executive-home.jpeg', '/royal-home.jpeg'],
+        images: ['/superior-home.jpeg', '/superior-1.jpeg', '/superior-home.jpeg', '/superior-toilet.jpeg',],
         date: 'Dec 20, 2023',
         title: 'Superior living experience',
         price: 'NGN45,000',
@@ -48,10 +48,58 @@ export const ROOMS = [
         ]
     },
     {
+        id: 6,
+        category: 'Platinum',
+        image: '/platinum-home.jpeg',
+        images: ['/platinum-home.jpeg', '/platinum-1.jpeg', '/platinum-home.jpeg', '/platinum-2.jpeg', '/platinum-3.jpeg',],
+        date: 'Dec 24, 2023',
+        title: 'Platinum experience',
+        price: 'NGN50,000',
+        rating: '4.9',
+        amenities: ['Penthouse', '2 Luxury', '500Mbps'],
+        description: 'Elevate your stay with our Platinum Experience. Located on the top floor, these rooms offer exclusive amenities, skyline views, and superior comfort. Perfect for those who appreciate the finer details.',
+        stats: {
+            bedrooms: 1,
+            bathrooms: 1,
+            guests: 2,
+            area: '500 sqft'
+        },
+        features: [
+            { icon: 'Wifi', title: 'Free Wifi', desc: 'High-speed internet access' },
+            { icon: 'Star', title: 'Concierge', desc: 'Dedicated service' },
+            { icon: 'Wine', title: 'Welcome Drink', desc: 'Complimentary' },
+            { icon: 'Music', title: 'Sound System', desc: 'Premium audio' }
+        ]
+    },
+    {
+        id: 5,
+        category: 'Business Class',
+        image: '/business-home.jpeg',
+        images: ['/business-home.jpeg', '/business-1.jpeg', '/business-2.jpeg', '/business-home.jpeg', '/business-home.jpeg'],
+        date: 'Dec 23, 2023',
+        title: 'Perfect business trip',
+        price: 'NGN60,000',
+        rating: '4.8',
+        amenities: ['1 Suite', '1 Attached', 'High Speed'],
+        description: 'Our Business Class rooms are tailored for efficiency and comfort. With enhanced connectivity, priority services, and a quiet environment, you can stay productive and relaxed throughout your stay.',
+        stats: {
+            bedrooms: 1,
+            bathrooms: 1,
+            guests: 2,
+            area: '380 sqft'
+        },
+        features: [
+            { icon: 'Wifi', title: 'Free Wifi', desc: 'High-speed internet access' },
+            { icon: 'Printer', title: 'Printing', desc: 'Business center access' },
+            { icon: 'Car', title: 'Transfer', desc: 'Airport pickup included' },
+            { icon: 'Coffee', title: 'Coffee Maker', desc: 'Premium coffee selection' }
+        ]
+    },
+    {
         id: 3,
         category: 'Executive',
         image: '/executive-home.jpeg',
-        images: ['/executive-home.jpeg', '/deluxe-home.jpeg', '/superior-home.jpeg', '/royal-home.jpeg'],
+        images: ['/executive-home.jpeg', '/executive-1.jpeg', '/executive-2.jpeg', '/executive-toilet1.jpeg', '/executive-toilet2.jpeg'],
         date: 'Dec 21, 2023',
         title: 'Executive living experience',
         price: 'NGN90,000',
@@ -75,7 +123,7 @@ export const ROOMS = [
         id: 4,
         category: 'Royal Suite',
         image: '/royal-home.jpeg',
-        images: ['/royal-home.jpeg', '/deluxe-home.jpeg', '/superior-home.jpeg', '/executive-home.jpeg'],
+        images: ['/royal-home.jpeg', '/royal-1.jpeg', '/royal-2.jpeg', '/royal-toilet1.jpeg', '/royal-toilet2.jpeg'],
         date: 'Dec 22, 2023',
         title: 'Royal treatment for you',
         price: 'NGN100,000',
@@ -95,52 +143,5 @@ export const ROOMS = [
             { icon: 'Sun', title: 'Balcony', desc: 'Private view' }
         ]
     },
-    {
-        id: 5,
-        category: 'Business Class',
-        image: '/business-home.jpeg',
-        images: ['/business-home.jpeg', '/deluxe-home.jpeg', '/superior-home.jpeg', '/royal-home.jpeg'],
-        date: 'Dec 23, 2023',
-        title: 'Perfect business trip',
-        price: 'NGN60,000',
-        rating: '4.8',
-        amenities: ['1 Suite', '1 Attached', 'High Speed'],
-        description: 'Our Business Class rooms are tailored for efficiency and comfort. With enhanced connectivity, priority services, and a quiet environment, you can stay productive and relaxed throughout your stay.',
-        stats: {
-            bedrooms: 1,
-            bathrooms: 1,
-            guests: 2,
-            area: '380 sqft'
-        },
-        features: [
-            { icon: 'Wifi', title: 'Free Wifi', desc: 'High-speed internet access' },
-            { icon: 'Printer', title: 'Printing', desc: 'Business center access' },
-            { icon: 'Car', title: 'Transfer', desc: 'Airport pickup included' },
-            { icon: 'Coffee', title: 'Coffee Maker', desc: 'Premium coffee selection' }
-        ]
-    },
-    {
-        id: 6,
-        category: 'Platinum',
-        image: '/platinum-home.jpeg',
-        images: ['/platinum-home.jpeg', '/royal-home.jpeg', '/deluxe-home.jpeg', '/superior-home.jpeg'],
-        date: 'Dec 24, 2023',
-        title: 'Platinum experience',
-        price: 'NGN60,000',
-        rating: '4.9',
-        amenities: ['Penthouse', '2 Luxury', '500Mbps'],
-        description: 'Elevate your stay with our Platinum Experience. Located on the top floor, these rooms offer exclusive amenities, skyline views, and superior comfort. Perfect for those who appreciate the finer details.',
-        stats: {
-            bedrooms: 1,
-            bathrooms: 1,
-            guests: 2,
-            area: '500 sqft'
-        },
-        features: [
-            { icon: 'Wifi', title: 'Free Wifi', desc: 'High-speed internet access' },
-            { icon: 'Star', title: 'Concierge', desc: 'Dedicated service' },
-            { icon: 'Wine', title: 'Welcome Drink', desc: 'Complimentary' },
-            { icon: 'Music', title: 'Sound System', desc: 'Premium audio' }
-        ]
-    }
+
 ];

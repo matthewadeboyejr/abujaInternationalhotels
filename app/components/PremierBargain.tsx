@@ -15,9 +15,9 @@ export default function PremierBargain() {
     };
 
     return (
-        <section className="w-full bg-white px-4 md:px-20 py-20">
+        <section className="w-full bg-white dark:bg-background px-4 md:px-20 py-20">
             <Link href={`/rooms/${room.id}`}>
-                <div className="bg-gray-100 text-black rounded-3xl md:rounded-[3rem] p-6 md:p-12 relative overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-12 mx-auto cursor-pointer group hover:shadow-xl transition-shadow">
+                <div className="bg-gray-100 dark:bg-zinc-900 text-black dark:text-white rounded-3xl md:rounded-[3rem] p-6 md:p-12 relative overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-12 mx-auto cursor-pointer group hover:shadow-xl transition-shadow">
 
                     {/* Left Side */}
                     <div className="relative z-10 flex flex-col justify-between h-full space-y-8 lg:w-1/3">
@@ -26,8 +26,8 @@ export default function PremierBargain() {
                         </h2>
 
                         <div className="mt-auto">
-                            <button className="w-16 h-16 bg-white rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                                <ArrowUpRight className="w-6 h-6 text-black" />
+                            <button className="w-16 h-16 bg-white dark:bg-white/10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                <ArrowUpRight className="w-6 h-6 text-black dark:text-white" />
                             </button>
                         </div>
                     </div>
@@ -41,8 +41,8 @@ export default function PremierBargain() {
                                     alt="Premier Bargain"
                                     className="w-full h-full object-cover transition-transform duration-700"
                                 />
-                                <div className="absolute top-4 right-4 bg-white text-black px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1 shadow-lg">
-                                    <Star className="w-3 h-3 fill-black" />
+                                <div className="absolute top-4 right-4 bg-white dark:bg-black text-black dark:text-white px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1 shadow-lg">
+                                    <Star className="w-3 h-3 fill-black dark:fill-white" />
                                     {room.rating}
                                 </div>
                             </div>

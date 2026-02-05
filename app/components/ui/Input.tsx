@@ -12,7 +12,7 @@ export default function Input({ label, required = false, className = '', ...prop
                 {label} {required && <span className="text-red-500">*</span>}
             </label>
             <input
-                className={`w-full bg-gray-50 text-black rounded-sm p-3 text-sm focus:outline-none focus:ring-2 focus:ring-green-500 border border-gray-200 ${className}`}
+                className={`w-full bg-gray-50 dark:bg-zinc-800 text-black dark:text-white rounded-sm p-3 text-sm focus:outline-none focus:ring-2 focus:ring-green-500 border border-gray-200 dark:border-zinc-700 ${className}`}
                 {...props}
             />
         </div>

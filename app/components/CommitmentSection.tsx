@@ -4,11 +4,11 @@ import { ArrowUpRight } from 'lucide-react';
 
 export default function CommitmentSection() {
   return (
-    <section className="w-full bg-white py-20">
+    <section className="w-full bg-white dark:bg-background py-20">
       <div className="mx-4 md:mx-20 relative">
 
         {/* Main Card */}
-        <div className="bg-black text-white rounded-[3rem] p-6 md:p-24 relative overflow-hidden">
+        <div className="bg-black dark:bg-zinc-900 text-white rounded-[3rem] p-6 md:p-24 relative overflow-hidden">
 
           {/* Top Right Floating Action */}
           <div className="absolute -top-6 right-[15%] z-20">

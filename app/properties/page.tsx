@@ -67,7 +67,7 @@ export default function PropertiesPage() {
     }
 
     return (
-        <div className="min-h-screen bg-white">
+        <div className="min-h-screen bg-white dark:bg-background">
 
 
             {/* Hero / Search Section */}
@@ -80,19 +80,19 @@ export default function PropertiesPage() {
 
                 <div className="relative z-10 max-w-7xl mx-auto">
                     <div className="text-center mb-12">
-                        <h1 className="text-4xl md:text-6xl font-bold mb-4">Book Your Stay</h1>
+                        <h1 className="text-4xl md:text-6xl font-bold mb-4 text-white">Book Your Stay</h1>
                         <p className="text-gray-300 text-lg">Find the perfect room for your dates</p>
                     </div>
 
                     {/* Search Bar */}
-                    <div className="bg-white p-4 rounded-4xl shadow-xl max-w-4xl mx-auto flex flex-col md:flex-row gap-4 items-center">
+                    <div className="bg-white dark:bg-zinc-900 p-4 rounded-4xl shadow-xl max-w-4xl mx-auto flex flex-col md:flex-row gap-4 items-center">
                         <div className="flex-1 w-full relative">
                             <label className="block text-xs font-bold text-gray-400 uppercase tracking-wider ml-4 mb-1">Check In</label>
-                            <div className="flex items-center px-4 bg-gray-50 rounded-xl h-14 border border-gray-100 focus-within:border-black transition-colors">
+                            <div className="flex items-center px-4 bg-gray-50 dark:bg-zinc-800 rounded-xl h-14 border border-gray-100 dark:border-zinc-700 focus-within:border-black dark:focus-within:border-white transition-colors">
                                 <Calendar className="w-5 h-5 text-gray-400 mr-3" />
                                 <input
                                     type="date"
-                                    className="bg-transparent w-full outline-none text-black font-medium"
+                                    className="bg-transparent w-full outline-none text-black dark:text-white font-medium"
                                     value={checkIn}
                                     onChange={(e) => setCheckIn(e.target.value)}
                                     min={new Date().toISOString().split('T')[0]}
@@ -102,11 +102,11 @@ export default function PropertiesPage() {
 
                         <div className="flex-1 w-full relative">
                             <label className="block text-xs font-bold text-gray-400 uppercase tracking-wider ml-4 mb-1">Check Out</label>
-                            <div className="flex items-center px-4 bg-gray-50 rounded-xl h-14 border border-gray-100 focus-within:border-black transition-colors">
+                            <div className="flex items-center px-4 bg-gray-50 dark:bg-zinc-800 rounded-xl h-14 border border-gray-100 dark:border-zinc-700 focus-within:border-black dark:focus-within:border-white transition-colors">
                                 <Calendar className="w-5 h-5 text-gray-400 mr-3" />
                                 <input
                                     type="date"
-                                    className="bg-transparent w-full outline-none text-black font-medium"
+                                    className="bg-transparent w-full outline-none text-black dark:text-white font-medium"
                                     value={checkOut}
                                     onChange={(e) => setCheckOut(e.target.value)}
                                     min={checkIn || new Date().toISOString().split('T')[0]}
@@ -116,7 +116,7 @@ export default function PropertiesPage() {
 
                         <button
                             onClick={handleSearch}
-                            className="w-full md:w-auto px-8 h-20 md:h-full bg-black text-white rounded-3xl font-bold text-lg hover:bg-gray-800 transition-all flex flex-col items-center justify-center md:mt-5 py-4 "
+                            className="w-full md:w-auto px-8 h-20 md:h-full bg-black dark:bg-white text-white dark:text-black rounded-3xl font-bold text-lg hover:bg-gray-800 dark:hover:bg-gray-200 transition-all flex flex-col items-center justify-center md:mt-5 py-4 "
                         >
                             {isLoading ? <Loader2 className="animate-spin" /> : 'Check Availability'}
                         </button>
@@ -129,7 +129,7 @@ export default function PropertiesPage() {
 
                 {searchTerms && !isLoading && (
                     <div className="mb-8">
-                        <h2 className="text-xl font-bold">
+                        <h2 className="text-xl font-bold text-black dark:text-white">
                             Availability for <span className="text-blue-600">{searchTerms.arrival}</span> to <span className="text-blue-600">{searchTerms.departure}</span>
                         </h2>
                     </div>
@@ -137,7 +137,7 @@ export default function PropertiesPage() {
 
                 {isLoading ? (
                     <div className="flex flex-col items-center justify-center py-20">
-                        <Loader2 className="w-10 h-10 animate-spin text-black mb-4" />
+                        <Loader2 className="w-10 h-10 animate-spin text-black dark:text-white mb-4" />
                         <p className="text-gray-500">Checking room availability...</p>
                     </div>
                 ) : (

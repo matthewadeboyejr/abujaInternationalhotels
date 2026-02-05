@@ -71,7 +71,7 @@ export default function RoomCard({ room }: { room: RoomProps }) {
                         </svg>
                     ))}
                 </span>
-                <button className="flex items-center gap-2 text-white text-sm font-bold group-hover:text-blue-500 transition-colors">
+                <button className="flex items-center gap-2 text-black dark:text-white text-sm font-bold group-hover:text-blue-500 transition-colors">
                     Explore More!
                     <span className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-blue-600 transition-colors">
                         <ArrowUpRight className="w-3 h-3 text-white" />

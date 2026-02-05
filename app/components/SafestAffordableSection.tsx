@@ -36,11 +36,11 @@ export default function SafestAffordableSection() {
    ]; */
 
   return (
-    <section className="w-full bg-white py-20">
+    <section className="w-full bg-white dark:bg-background py-20">
       <div className="mx-4 md:mx-20"> {/* Match other sections margin */}
 
         {/* Dark Container */}
-        <div className="bg-black text-white rounded-3xl md:rounded-[3rem] p-6 md:p-16 mb-20">
+        <div className="bg-black dark:bg-zinc-900 text-white rounded-3xl md:rounded-[3rem] p-6 md:p-16 mb-20">
 
           {/* Header */}
           <div className="flex flex-col items-center mb-16 text-center">

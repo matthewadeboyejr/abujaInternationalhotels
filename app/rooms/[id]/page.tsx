@@ -43,7 +43,7 @@ export default function RoomDetailsPage() {
 
     if (!room) {
         return (
-            <div className="min-h-screen flex items-center justify-center bg-white text-black">
+            <div className="min-h-screen flex items-center justify-center bg-white dark:bg-background text-black dark:text-white">
                 <h1 className="text-4xl font-bold">Room not found</h1>
             </div>
         );
@@ -120,20 +120,20 @@ export default function RoomDetailsPage() {
     const isProcessing = isLoading || isBooking;
 
     return (
-        <div className="min-h-screen bg-white text-black font-sans">
+        <div className="min-h-screen bg-white dark:bg-background text-black dark:text-foreground font-sans">
             {/* Hero Header */}
-            <div className="bg-gray-50 pt-32 pb-12">
+            <div className="bg-gray-50 dark:bg-zinc-900 pt-32 pb-12">
                 <div className="mx-4 md:mx-20">
                     <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-8">
                         <div>
                             <div className="flex items-center gap-2 text-sm text-gray-500 font-medium uppercase tracking-widest mb-4">
                                 <span>Home</span>
-                                <span className="text-gray-300">/</span>
+                                <span className="text-gray-300 dark:text-gray-600">/</span>
                                 <span>Rooms</span>
-                                <span className="text-gray-300">/</span>
-                                <span className="text-black">{room.category}</span>
+                                <span className="text-gray-300 dark:text-gray-600">/</span>
+                                <span className="text-black dark:text-white">{room.category}</span>
                             </div>
-                            <h1 className="text-4xl md:text-7xl font-bold tracking-tight text-black mb-2">{room.title}</h1>
+                            <h1 className="text-4xl md:text-7xl font-bold tracking-tight text-black dark:text-white mb-2">{room.title}</h1>
                             <div className="flex items-center gap-4 text-gray-500">
                                 <div className="flex items-center gap-1">
                                     <MapPin className="w-4 h-4" />
@@ -141,18 +141,18 @@ export default function RoomDetailsPage() {
                                 </div>
                                 <div className="flex items-center gap-1 text-yellow-500">
                                     <Star className="w-4 h-4 fill-current" />
-                                    <span className="font-bold text-black">{room.rating}</span>
+                                    <span className="font-bold text-black dark:text-white">{room.rating}</span>
                                     <span className="text-gray-400">(45 Reviews)</span>
                                 </div>
                             </div>
                         </div>
 
                         <div className="flex items-center gap-4">
-                            <button className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center hover:bg-gray-100 transition-colors">
-                                <Share2 className="w-5 h-5" />
+                            <button className="w-12 h-12 rounded-full border border-gray-200 dark:border-zinc-700 flex items-center justify-center hover:bg-gray-100 dark:hover:bg-zinc-800 transition-colors">
+                                <Share2 className="w-5 h-5 text-black dark:text-white" />
                             </button>
-                            <button className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center hover:bg-gray-100 transition-colors">
-                                <Heart className="w-5 h-5" />
+                            <button className="w-12 h-12 rounded-full border border-gray-200 dark:border-zinc-700 flex items-center justify-center hover:bg-gray-100 dark:hover:bg-zinc-800 transition-colors">
+                                <Heart className="w-5 h-5 text-black dark:text-white" />
                             </button>
                         </div>
                     </div>
@@ -187,65 +187,65 @@ export default function RoomDetailsPage() {
                 <div className="lg:col-span-2 space-y-16">
 
                     {/* Quick Stats */}
-                    <div className="flex flex-wrap gap-8 py-8 border-y border-gray-100">
+                    <div className="flex flex-wrap gap-8 py-8 border-y border-gray-100 dark:border-zinc-800">
                         <div className="flex items-center gap-3">
-                            <div className="w-12 h-12 bg-gray-50 rounded-full flex items-center justify-center">
-                                <Users className="w-5 h-5" />
+                            <div className="w-12 h-12 bg-gray-50 dark:bg-zinc-900 rounded-full flex items-center justify-center">
+                                <Users className="w-5 h-5 text-black dark:text-white" />
                             </div>
                             <div>
-                                <p className="text-sm text-gray-500">Guests</p>
-                                <p className="font-bold">{room.stats.guests} Adults</p>
+                                <p className="text-sm text-gray-500 dark:text-gray-400">Guests</p>
+                                <p className="font-bold text-black dark:text-white">{room.stats.guests} Adults</p>
                             </div>
                         </div>
                         <div className="flex items-center gap-3">
-                            <div className="w-12 h-12 bg-gray-50 rounded-full flex items-center justify-center">
-                                <BedDouble className="w-5 h-5" />
+                            <div className="w-12 h-12 bg-gray-50 dark:bg-zinc-900 rounded-full flex items-center justify-center">
+                                <BedDouble className="w-5 h-5 text-black dark:text-white" />
                             </div>
                             <div>
-                                <p className="text-sm text-gray-500">Bedroom</p>
-                                <p className="font-bold">{room.stats.bedrooms} Bed</p>
+                                <p className="text-sm text-gray-500 dark:text-gray-400">Bedroom</p>
+                                <p className="font-bold text-black dark:text-white">{room.stats.bedrooms} Bed</p>
                             </div>
                         </div>
                         <div className="flex items-center gap-3">
-                            <div className="w-12 h-12 bg-gray-50 rounded-full flex items-center justify-center">
-                                <Bath className="w-5 h-5" />
+                            <div className="w-12 h-12 bg-gray-50 dark:bg-zinc-900 rounded-full flex items-center justify-center">
+                                <Bath className="w-5 h-5 text-black dark:text-white" />
                             </div>
                             <div>
-                                <p className="text-sm text-gray-500">Bathroom</p>
-                                <p className="font-bold">{room.stats.bathrooms} Bath</p>
+                                <p className="text-sm text-gray-500 dark:text-gray-400">Bathroom</p>
+                                <p className="font-bold text-black dark:text-white">{room.stats.bathrooms} Bath</p>
                             </div>
                         </div>
                         <div className="flex items-center gap-3">
-                            <div className="w-12 h-12 bg-gray-50 rounded-full flex items-center justify-center">
-                                <Maximize className="w-5 h-5" />
+                            <div className="w-12 h-12 bg-gray-50 dark:bg-zinc-900 rounded-full flex items-center justify-center">
+                                <Maximize className="w-5 h-5 text-black dark:text-white" />
                             </div>
                             <div>
-                                <p className="text-sm text-gray-500">Area</p>
-                                <p className="font-bold">{room.stats.area}</p>
+                                <p className="text-sm text-gray-500 dark:text-gray-400">Area</p>
+                                <p className="font-bold text-black dark:text-white">{room.stats.area}</p>
                             </div>
                         </div>
                     </div>
 
                     {/* Description */}
                     <div>
-                        <h2 className="text-3xl font-bold mb-6">About this room</h2>
-                        <p className="text-gray-600 leading-relaxed text-lg">
+                        <h2 className="text-3xl font-bold mb-6 text-black dark:text-white">About this room</h2>
+                        <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-lg">
                             {room.description}
                         </p>
                     </div>
 
                     {/* Amenities Grid */}
                     <div>
-                        <h2 className="text-3xl font-bold mb-8">Amenities</h2>
+                        <h2 className="text-3xl font-bold mb-8 text-black dark:text-white">Amenities</h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             {room.features.map((feature, idx) => (
-                                <div key={idx} className="flex gap-4 p-6 rounded-2xl border border-gray-100 hover:shadow-lg transition-shadow">
-                                    <div className="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center flex-shrink-0">
+                                <div key={idx} className="flex gap-4 p-6 rounded-2xl border border-gray-100 dark:border-zinc-800 hover:shadow-lg transition-shadow">
+                                    <div className="w-12 h-12 bg-black dark:bg-white text-white dark:text-black rounded-full flex items-center justify-center flex-shrink-0">
                                         <CheckCircle className="w-5 h-5" />
                                     </div>
                                     <div>
-                                        <h4 className="font-bold text-lg mb-1">{feature.title}</h4>
-                                        <p className="text-gray-500 text-sm">{feature.desc}</p>
+                                        <h4 className="font-bold text-lg mb-1 text-black dark:text-white">{feature.title}</h4>
+                                        <p className="text-gray-500 dark:text-gray-400 text-sm">{feature.desc}</p>
                                     </div>
                                 </div>
                             ))}
@@ -265,7 +265,7 @@ export default function RoomDetailsPage() {
 
                 {/* Right Column: Sticky Booking Widget */}
                 <div className="lg:col-span-1">
-                    <div className="bg-black border text-white rounded-2xl p-8 sticky top-32 ">
+                    <div className="bg-black dark:bg-zinc-900 border dark:border-zinc-800 text-white rounded-2xl p-8 sticky top-32 ">
                         <div className="flex justify-between items-center mb-8">
                             <h3 className="text-2xl font-bold">Booking</h3>
                             <div className="text-right">
@@ -284,7 +284,7 @@ export default function RoomDetailsPage() {
                                         min={today}
                                         value={checkInDate}
                                         onChange={(e) => setCheckInDate(e.target.value)}
-                                        className="w-full bg-gray-50 text-black rounded-sm p-3 text-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+                                        className="w-full bg-gray-50 dark:bg-zinc-800 text-black dark:text-white rounded-sm p-3 text-sm focus:outline-none focus:ring-2 focus:ring-green-500"
                                     />
                                 </div>
                                 <div>
@@ -294,7 +294,7 @@ export default function RoomDetailsPage() {
                                         min={checkInDate || today}
                                         value={checkOutDate}
                                         onChange={(e) => setCheckOutDate(e.target.value)}
-                                        className="w-full bg-gray-50 text-black rounded-sm p-3 text-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+                                        className="w-full bg-gray-50 dark:bg-zinc-800 text-black dark:text-white rounded-sm p-3 text-sm focus:outline-none focus:ring-2 focus:ring-green-500"
                                     />
                                 </div>
                             </div>
@@ -303,7 +303,7 @@ export default function RoomDetailsPage() {
 
                         {/* Availability Status */}
                         {checkInDate && checkOutDate && (
-                            <div className={`p-4 rounded-xl mb-4 text-center ${isLoading ? 'bg-gray-100 text-gray-500' : isAvailable ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>
+                            <div className={`p-4 rounded-xl mb-4 text-center ${isLoading ? 'bg-gray-100 dark:bg-zinc-800 text-gray-500' : isAvailable ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400' : 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400'}`}>
                                 {isLoading ? (
                                     <div className="flex items-center justify-center gap-2">
                                         <Loader2 className="w-4 h-4 animate-spin" />

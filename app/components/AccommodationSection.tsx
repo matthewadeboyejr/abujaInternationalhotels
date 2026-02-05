@@ -124,18 +124,18 @@ export default function AccommodationSection() {
   const currentListing = listings[activeTab as keyof typeof listings];
 
   return (
-    <section className=" bg-white py-16 mx-4 md:mx-20">
+    <section className=" bg-white dark:bg-background py-16 mx-4 md:mx-20">
       <div className=" ">
 
         {/* Tabs */}
-        <div className="flex flex-wrap justify-between items-center bg-gray-50 rounded-2xl p-2 mb-12">
+        <div className="flex flex-wrap justify-between items-center bg-gray-50 dark:bg-zinc-900 rounded-2xl p-2 mb-12">
           {tabs.map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
               className={`flex-1 px-8 py-4 text-sm font-medium rounded-xl transition-all duration-300 ${activeTab === tab
-                ? 'bg-white text-black shadow-sm'
-                : 'text-gray-600 hover:text-black hover:bg-gray-100' // Added hover bg for better feedback
+                ? 'bg-white dark:bg-zinc-800 text-black dark:text-white shadow-sm'
+                : 'text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white hover:bg-gray-100 dark:hover:bg-zinc-800' // Added hover bg for better feedback
                 }`}
             >
               {tab}
@@ -144,7 +144,7 @@ export default function AccommodationSection() {
         </div>
 
         {/* Content Card */}
-        <div className="rounded-3xl p-6  bg-gray-50">
+        <div className="rounded-3xl p-6  bg-gray-50 dark:bg-zinc-900">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
 
             {/* Left Image Section */}
@@ -165,28 +165,28 @@ export default function AccommodationSection() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 h-full">
 
                 {/* Column 1: Title & Host */}
-                <div className="flex flex-col justify-between border-r border-gray-200">
+                <div className="flex flex-col justify-between border-r border-gray-200 dark:border-zinc-800">
                   <div>
                     <p className="text-xs font-bold tracking-widest text-gray-400 uppercase mb-4">DWS Hotel</p>
-                    <h3 className="text-2xl font-bold text-black leading-tight mb-4">
+                    <h3 className="text-2xl font-bold text-black dark:text-white leading-tight mb-4">
                       {currentListing.title}
                     </h3>
                   </div>
-                  <Link href={`/rooms/${currentListing.id}`} className="inline-flex items-center text-3xl  text-black hover:underline mt-auto">
+                  <Link href={`/rooms/${currentListing.id}`} className="inline-flex items-center text-3xl  text-black dark:text-white hover:underline mt-auto">
                     View details
-                    <span className="ml-1 bg-black text-white rounded-full p-0.5 w-6 h-6 flex items-center justify-center text-2xl">↗</span>
+                    <span className="ml-1 bg-black dark:bg-white text-white dark:text-black rounded-full p-0.5 w-6 h-6 flex items-center justify-center text-2xl">↗</span>
                   </Link>
                 </div>
 
                 {/* Column 2: Price & Info */}
-                <div className="flex flex-col bg-white p-6 rounded-2xl">
+                <div className="flex flex-col bg-white dark:bg-zinc-800 p-6 rounded-2xl">
                   <div className="mb-8">
-                    <h4 className="text-3xl font-bold text-black">{currentListing.price}</h4>
+                    <h4 className="text-3xl font-bold text-black dark:text-white">{currentListing.price}</h4>
                     <p className="text-xs text-gray-400 mt-1">{currentListing.tax}</p>
                   </div>
 
                   <div className="mt-auto">
-                    <h5 className="font-bold text-black text-sm mb-4">Basic Information</h5>
+                    <h5 className="font-bold text-black dark:text-white text-sm mb-4">Basic Information</h5>
                     <div className="space-y-3">
                       {currentListing.basicInfo.map((info, idx) => (
                         <div key={idx} className="flex justify-between text-sm">
@@ -196,7 +196,7 @@ export default function AccommodationSection() {
                       ))}
                     </div>
                     <Link href={`/rooms/${currentListing.id}`}>
-                      <button className="px-4 py-4 w-full mt-4 bg-black text-white text-lg font-medium rounded-full hover:bg-gray-800 transition-colors">
+                      <button className="px-4 py-4 w-full mt-4 bg-black dark:bg-white text-white dark:text-black text-lg font-medium rounded-full hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors">
                         Book Now!
                       </button>
                     </Link>

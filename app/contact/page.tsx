@@ -12,7 +12,7 @@ export default function ContactPage() {
     };
 
     return (
-        <div className="min-h-screen bg-white">
+        <div className="min-h-screen bg-white dark:bg-background">
 
 
             {/* Hero Section */}
@@ -35,55 +35,55 @@ export default function ContactPage() {
                     {/* Information Column */}
                     <div className="space-y-12">
                         <div>
-                            <h2 className="text-4xl font-bold mb-6">We'd love to hear from you</h2>
-                            <p className="text-gray-600 text-lg leading-relaxed">
+                            <h2 className="text-4xl font-bold mb-6 text-black dark:text-white">We'd love to hear from you</h2>
+                            <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
                                 Whether you have a question about our rooms, pricing, need a reservation, or anything else, our team is ready to answer all your questions.
                             </p>
                         </div>
 
                         <div className="space-y-8">
                             <div className="flex items-start gap-4">
-                                <div className="w-12 h-12 bg-gray-50 rounded-full flex items-center justify-center shrink-0">
-                                    <MapPin className="w-5 h-5" />
+                                <div className="w-12 h-12 bg-gray-50 dark:bg-zinc-800 rounded-full flex items-center justify-center shrink-0">
+                                    <MapPin className="w-5 h-5 text-black dark:text-white" />
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-lg mb-1">Visit Us</h4>
-                                    <p className="text-gray-600">Abraka, Delta State, Nigeria</p>
+                                    <h4 className="font-bold text-lg mb-1 text-black dark:text-white">Visit Us</h4>
+                                    <p className="text-gray-600 dark:text-gray-400">Abraka, Delta State, Nigeria</p>
                                 </div>
                             </div>
 
                             <div className="flex items-start gap-4">
-                                <div className="w-12 h-12 bg-gray-50 rounded-full flex items-center justify-center shrink-0">
-                                    <Phone className="w-5 h-5" />
+                                <div className="w-12 h-12 bg-gray-50 dark:bg-zinc-800 rounded-full flex items-center justify-center shrink-0">
+                                    <Phone className="w-5 h-5 text-black dark:text-white" />
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-lg mb-1">Call Us</h4>
-                                    <p className="text-gray-600">+234 904 066 3871</p>
-                                    <p className="text-gray-600 text-sm mt-1">Mon-Sund 24/7</p>
+                                    <h4 className="font-bold text-lg mb-1 text-black dark:text-white">Call Us</h4>
+                                    <p className="text-gray-600 dark:text-gray-400">+234 904 066 3871</p>
+                                    <p className="text-gray-600 dark:text-gray-400 text-sm mt-1">Mon-Sund 24/7</p>
                                 </div>
                             </div>
 
                             <div className="flex items-start gap-4">
-                                <div className="w-12 h-12 bg-gray-50 rounded-full flex items-center justify-center shrink-0">
-                                    <Mail className="w-5 h-5" />
+                                <div className="w-12 h-12 bg-gray-50 dark:bg-zinc-800 rounded-full flex items-center justify-center shrink-0">
+                                    <Mail className="w-5 h-5 text-black dark:text-white" />
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-lg mb-1">Chat to us</h4>
-                                    <p className="text-gray-600">Our friendly team is here to help.</p>
-                                    <a href="mailto:infodws@gmail.com" className="text-black font-bold mt-1 block">infodws@gmail.com</a>
+                                    <h4 className="font-bold text-lg mb-1 text-black dark:text-white">Chat to us</h4>
+                                    <p className="text-gray-600 dark:text-gray-400">Our friendly team is here to help.</p>
+                                    <a href="mailto:infodws@gmail.com" className="text-black dark:text-white font-bold mt-1 block">infodws@gmail.com</a>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     {/* WhatsApp Action Column (Replacing Form) */}
-                    <div className="bg-gray-50 rounded-3xl p-8 md:p-12 flex flex-col justify-center text-center space-y-8">
+                    <div className="bg-gray-50 dark:bg-zinc-900 rounded-3xl p-8 md:p-12 flex flex-col justify-center text-center space-y-8">
                         <div>
                             <div className="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
                                 <MessageCircle className="w-10 h-10" />
                             </div>
-                            <h3 className="text-3xl font-bold mb-4">Chat on WhatsApp</h3>
-                            <p className="text-gray-600 text-lg">
+                            <h3 className="text-3xl font-bold mb-4 text-black dark:text-white">Chat on WhatsApp</h3>
+                            <p className="text-gray-600 dark:text-gray-400 text-lg">
                                 need immediate assistance? Start a conversation with our support team on WhatsApp for quick responses.
                             </p>
                         </div>

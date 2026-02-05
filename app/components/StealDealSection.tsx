@@ -73,10 +73,10 @@ export default function StealDealSection() {
   };
 
   return (
-    <section className="w-full bg-white py-20">
+    <section className="w-full bg-white dark:bg-background py-20">
       <div className="mx-4 md:mx-20">
         {/* Section Title */}
-        <h2 className="text-4xl md:text-6xl font-bold text-black text-center mb-16">
+        <h2 className="text-4xl md:text-6xl font-bold text-black dark:text-foreground text-center mb-16">
           steal deal
         </h2>
 
@@ -100,8 +100,8 @@ export default function StealDealSection() {
             </div>
 
             {/* Rating Tag (Image Overlay) */}
-            <div className="absolute top-4 right-4 md:top-8 md:right-8 lg:left-[60%] lg:right-auto bg-black text-white px-3 py-1 rounded-full flex items-center gap-1 z-10">
-              <Star className="w-3 h-3 fill-white" />
+            <div className="absolute top-4 right-4 md:top-8 md:right-8 lg:left-[60%] lg:right-auto bg-black dark:bg-white text-white dark:text-black px-3 py-1 rounded-full flex items-center gap-1 z-10">
+              <Star className="w-3 h-3 fill-white dark:fill-black" />
               <span className="text-xs font-bold">{slides[currentSlide].rating}</span>
             </div>
 
@@ -124,28 +124,28 @@ export default function StealDealSection() {
           </div>
 
           {/* Floating Info Card */}
-          <div className="relative order-2 lg:order-0 w-full lg:absolute lg:right-20 lg:top-1/2 lg:transform lg:-translate-y-1/2 bg-white rounded-3xl p-6 md:p-8 shadow-2xl max-w-none lg:max-w-md lg:w-[450px] lg:min-h-[500px] mt-[-30px] lg:mt-0 z-30 mx-auto border border-gray-100 lg:border-none">
+          <div className="relative order-2 lg:order-0 w-full lg:absolute lg:right-20 lg:top-1/2 lg:transform lg:-translate-y-1/2 bg-white dark:bg-zinc-900 rounded-3xl p-6 md:p-8 shadow-2xl max-w-none lg:max-w-md lg:w-[450px] lg:min-h-[500px] mt-[-30px] lg:mt-0 z-30 mx-auto border border-gray-100 dark:border-zinc-800 lg:border-none">
             <div className="mb-6">
               <div className="flex items-baseline gap-1 mb-2">
-                <span className="text-3xl md:text-5xl font-bold text-black">{slides[currentSlide].price}</span>
+                <span className="text-3xl md:text-5xl font-bold text-black dark:text-white">{slides[currentSlide].price}</span>
                 <span className="text-gray-400 text-sm md:text-lg">{slides[currentSlide].period}</span>
               </div>
-              <h3 className="text-xl md:text-2xl font-bold text-black leading-tight">
+              <h3 className="text-xl md:text-2xl font-bold text-black dark:text-white leading-tight">
                 {slides[currentSlide].title}
               </h3>
             </div>
 
             <div className="space-y-4 mb-8">
               {slides[currentSlide].details.map((detail, idx) => (
-                <div key={idx} className="flex justify-between items-center border-b border-gray-100 pb-2 last:border-0">
-                  <span className="text-gray-600 text-sm font-medium">{detail.label}</span>
-                  <span className="text-black font-bold text-sm text-right">{detail.value}</span>
+                <div key={idx} className="flex justify-between items-center border-b border-gray-100 dark:border-zinc-800 pb-2 last:border-0">
+                  <span className="text-gray-600 dark:text-gray-400 text-sm font-medium">{detail.label}</span>
+                  <span className="text-black dark:text-white font-bold text-sm text-right">{detail.value}</span>
                 </div>
               ))}
             </div>
 
             <Link href={`/rooms/${slides[currentSlide].id}`}>
-              <button className="w-full bg-black text-white py-4 rounded-full font-bold text-lg hover:bg-gray-800 transition-colors">
+              <button className="w-full bg-black dark:bg-white text-white dark:text-black py-4 rounded-full font-bold text-lg hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors">
                 Reserve Now!
               </button>
             </Link>

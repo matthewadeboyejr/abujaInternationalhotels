@@ -34,13 +34,13 @@ export default function CommonQueriesSection() {
   ];
 
   return (
-    <section className="w-full bg-white py-24">
+    <section className="w-full bg-white dark:bg-background py-24">
       <div className="mx-4 md:mx-20">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
 
           {/* Left Side: Header & Image */}
           <div className="lg:col-span-4 space-y-8">
-            <h2 className="text-4xl md:text-6xl font-bold text-black leading-tight">
+            <h2 className="text-4xl md:text-6xl font-bold text-black dark:text-foreground leading-tight">
               Common<br />Queries
             </h2>
 
@@ -52,7 +52,7 @@ export default function CommonQueriesSection() {
               />
             </div>
 
-            <p className="text-xl font-medium text-black max-w-xs">
+            <p className="text-xl font-medium text-black dark:text-foreground max-w-xs">
               What are the check-in and check-out times for accommodations?
             </p>
           </div>
@@ -63,13 +63,13 @@ export default function CommonQueriesSection() {
               {queries.map((query, index) => (
                 <div
                   key={index}
-                  className="bg-gray-50 rounded-2xl overflow-hidden transition-all duration-300"
+                  className="bg-gray-50 dark:bg-zinc-900 rounded-2xl overflow-hidden transition-all duration-300"
                 >
                   <button
                     onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                    className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-100 transition-colors"
+                    className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-100 dark:hover:bg-zinc-800 transition-colors"
                   >
-                    <span className="text-lg font-medium text-black">{query.question}</span>
+                    <span className="text-lg font-medium text-black dark:text-white">{query.question}</span>
                     {openIndex === index ? (
                       <Minus className="w-5 h-5 text-gray-400" />
                     ) : (
@@ -81,7 +81,7 @@ export default function CommonQueriesSection() {
                     className={`transition-all duration-300 ease-in-out overflow-hidden ${openIndex === index ? 'max-h-48 opacity-100' : 'max-h-0 opacity-0'
                       }`}
                   >
-                    <div className="px-6 pb-6 text-gray-600 text-sm leading-relaxed">
+                    <div className="px-6 pb-6 text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
                       {query.answer}
                     </div>
                   </div>
@@ -92,26 +92,26 @@ export default function CommonQueriesSection() {
 
           {/* Right Side: Experts Sidebar */}
           <div className="lg:col-span-3">
-            <div className="bg-gray-50 rounded-4xl p-8 h-full">
+            <div className="bg-gray-50 dark:bg-zinc-900 rounded-4xl p-8 h-full">
               {/* Avatars */}
 
 
-              <h3 className="text-xl font-medium text-black mb-8 leading-snug">
+              <h3 className="text-xl font-medium text-black dark:text-white mb-8 leading-snug">
                 Need more help? Chat with our team.
               </h3>
 
               <div className="space-y-6 mb-12">
-                <a href="#" className="flex items-center gap-3 text-gray-600 hover:text-black transition-colors group">
+                <a href="#" className="flex items-center gap-3 text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors group">
                   <HelpCircle className="w-5 h-5" />
                   <span className="group-hover:underline">FAQ Page</span>
                 </a>
-                <a href="#" className="flex items-center gap-3 text-gray-600 hover:text-black transition-colors group">
+                <a href="#" className="flex items-center gap-3 text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors group">
                   <MapPin className="w-5 h-5" />
                   <span className="group-hover:underline">Contact us</span>
                 </a>
               </div>
 
-              <button className="w-full py-4 bg-black text-white rounded-full font-medium flex items-center justify-center gap-2 hover:bg-gray-800 transition-colors mt-auto">
+              <button className="w-full py-4 bg-black dark:bg-white text-white dark:text-black rounded-full font-medium flex items-center justify-center gap-2 hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors mt-auto">
                 Chat with us
                 <MessageSquare className="w-4 h-4 fill-white" />
               </button>
