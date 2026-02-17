@@ -19,13 +19,13 @@ export default function CommitmentSection() {
 
           <div className="relative z-10 max-w-4xl">
             <h2 className="text-3xl md:text-5xl lg:text-7xl font-medium leading-tight mb-16 text-gray-500">
-              We are dedicated to redefining <span className="text-white font-normal">hospitality</span> in Abraka with unmatched <span className="text-white font-normal">comfort</span> and class.
+              Blending our <span className="text-white font-normal">physical location advantage</span> with a philosophy of <span className="text-white font-normal">relentless guest satisfaction</span>.
             </h2>
 
             <div className="space-y-2">
               <div>
-                <p className="text-white text-xl font-medium">Amb. Umulor Blessing Awore AKA BusyBoss</p>
-                <p className="text-gray-500 text-sm uppercase tracking-wider">CEO & MD DWS Group</p>
+                <p className="text-white text-xl font-medium">Executive Management</p>
+                <p className="text-gray-500 text-sm uppercase tracking-wider">Abuja International Hotels</p>
               </div>
             </div>
           </div>

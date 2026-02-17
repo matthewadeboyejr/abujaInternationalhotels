@@ -13,35 +13,35 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://dwshotels.com'),
+  metadataBase: new URL('https://abujainternationalhotels.com'),
   title: {
-    default: "DWS Hotels - Luxury Stay in Abraka",
-    template: "%s | DWS Hotels"
+    default: "Abuja International Hotels - Luxury & Comfort in the Capital",
+    template: "%s | Abuja International Hotels"
   },
-  description: "Experience world-class hospitality at DWS Hotel. Luxury rooms, exquisite dining, and premium amenities in the heart of Abraka, Delta State.",
-  keywords: ["Hotel", "Abraka", "Delta State", "Accommodation", "Luxury", "Booking", "DWS"],
-  authors: [{ name: "DWS Hotels" }],
-  creator: "DWS Hotels",
+  description: "Abuja International Hotels offers unparalleled luxury and comfort in the heart of Abuja. Experience our premier destination for business and leisure.",
+  keywords: ["Hotel", "Abuja", "Federal Capital Territory", "Luxury", "Accommodation", "Conference", "Event Center", "Nigeria"],
+  authors: [{ name: "Abuja International Hotels" }],
+  creator: "Abuja International Hotels",
   openGraph: {
     type: "website",
     locale: "en_NG",
-    url: "https://dwshotels.com",
-    title: "DWS Hotels - Luxury Stay in Abraka",
-    description: "Book your perfect accommodation with Dwshotels. Browse and book rooms, villas, apartments, and more.",
-    siteName: "DWS Hotels",
+    url: "https://abujainternationalhotels.com",
+    title: "Abuja International Hotels - Luxury & Comfort",
+    description: "A premier destination for business and leisure, set against the spectacular backdrop of Aso Rock.",
+    siteName: "Abuja International Hotels",
     images: [
       {
-        url: "/og-image.png",
+        url: "/og-image.png", // Keep existing or update if provided later
         width: 1200,
         height: 630,
-        alt: "DWS Hotels Luxury Accommodation",
+        alt: "Abuja International Hotels Luxury",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "DWS Hotels - Find the Best Stay",
-    description: "Experience luxury and comfort in Abraka.",
+    title: "Abuja International Hotels",
+    description: "Experience unparalleled luxury in the heart of Abuja.",
     images: ["/og-image.png"],
   },
   robots: {

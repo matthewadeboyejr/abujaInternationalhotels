@@ -1,27 +1,20 @@
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
-import FeaturedRooms from './components/FeaturedRooms';
-import AccommodationSection from './components/AccommodationSection';
-import SafestAffordableSection from './components/SafestAffordableSection';
-import StealDealSection from './components/StealDealSection';
-import CommonQueriesSection from './components/CommonQueriesSection';
-import SpotlightsSection from './components/SpotlightsSection';
+import AboutSection from './components/AboutSection';
+import ServicesSection from './components/ServicesSection';
+import InvestorRelationsSection from './components/InvestorRelationsSection';
 import CommitmentSection from './components/CommitmentSection';
-import Footer from './components/Footer';
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-background">
 
       <HeroSection />
-      <FeaturedRooms />
-      <AccommodationSection />
-      <SafestAffordableSection />
-      <StealDealSection />
-      <CommonQueriesSection />
+      <AboutSection />
+      <ServicesSection />
+      <InvestorRelationsSection />
+
       <CommitmentSection />
-
-
 
     </div>
   );
