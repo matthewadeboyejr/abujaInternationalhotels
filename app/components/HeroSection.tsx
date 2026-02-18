@@ -14,25 +14,26 @@ export default function HeroSection() {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-black/20" />
+        <div className="absolute bottom-0 left-0 w-full h-1/2 bg-linear-to-t from-black/80 to-transparent" />
       </div>
 
       {/* Content */}
-      <div className="relative z-10 h-full flex flex-col justify-center items-center text-center px-4 md:px-20">
+      <div className="relative z-10 h-full flex flex-col justify-end items-center text-center px-4 md:px-20 pb-20 md:pb-32">
         <div className="space-y-6 max-w-4xl">
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-thin tracking-tight text-white font-serif">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-thin tracking-tight text-white font-serif">
             Abuja International Hotels
           </h1>
 
           <div className="w-24 h-1 bg-white/80 mx-auto rounded-full" />
 
-          <p className="text-xl md:text-2xl text-white/90 font-light max-w-2xl mx-auto leading-relaxed">
+          <p className="text-base md:text-lg text-white/90 font-light max-w-2xl mx-auto leading-relaxed">
             Unparalleled luxury and comfort in the heart of the Federal Capital Territory.
           </p>
 
           <div className="pt-8">
             <Link href="/about">
-              <button className="px-8 py-4 bg-white/10 backdrop-blur-md border border-white/30 text-white text-lg rounded-full hover:bg-white hover:text-black transition-all duration-300">
+              <button className="px-6 py-3 bg-white/10 backdrop-blur-md border border-white/30 text-white text-base rounded-full hover:bg-white hover:text-black transition-all duration-300">
                 Discover Our Story
               </button>
             </Link>
