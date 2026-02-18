@@ -12,7 +12,7 @@ export default function ServicesPage() {
             description: 'Experience unparalleled comfort in one of our 253 guestrooms, ranging from Classic rooms to our exquisite Presidential Suites.',
             benefits: ['Privacy, comfort, and a "home away from home" environment', 'Unique views of Aso Rock and city skyline', 'Private balconies for every room'],
             target: 'Business Travelers, Diplomats, and Families',
-            image: 'https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=2670&auto=format&fit=crop'
+            image: '/logde-img.jpg'
         },
         {
             id: 'conference',
@@ -21,7 +21,7 @@ export default function ServicesPage() {
             description: 'Host world-class events in our versatile 900 sqm space, including a grand conference hall equipped with full audio-visual support.',
             benefits: ['Seamless execution of high-profile events', 'Direct, secure pedestrian access to the International Conference Centre', 'Dedicated event planning team'],
             target: 'Government bodies, NGOs, and Corporate organizations',
-            image: 'https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=2669&auto=format&fit=crop'
+            image: '/conference-img.jpg'
         },
         {
             id: 'dining',
@@ -30,7 +30,7 @@ export default function ServicesPage() {
             description: 'Savor a culinary journey with our selection of Nigerian and International cuisines, featuring our famous weekend poolside barbecues.',
             benefits: ['High-quality culinary experiences within a secure environment', 'Live music and local flavours', 'Diverse menu options for all palates'],
             target: 'Food enthusiasts and guests hosting formal dinners',
-            image: 'https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=2574&auto=format&fit=crop'
+            image: '/fine-img.jpg'
         },
         {
             id: 'wellness',
@@ -39,7 +39,7 @@ export default function ServicesPage() {
             description: 'Rejuvenate your mind and body at our full-service health club, featuring massages, sauna, steam room, and beauty treatments.',
             benefits: ['Promotes mental and physical wellbeing in a serene setting', 'Comprehensive facilities including steam room', 'Professional therapists'],
             target: 'Long stay guests and local members seeking rejuvenation',
-            image: 'https://images.unsplash.com/photo-1600334129128-685c5582fd35?q=80&w=2670&auto=format&fit=crop'
+            image: '/spa-img.jpg'
         },
         {
             id: 'sports',
@@ -48,7 +48,7 @@ export default function ServicesPage() {
             description: 'Stay active with our outdoor pool, tennis and squash courts, or enjoy the nightlife at our on-site casino and night club.',
             benefits: ['Rare central location offering both tennis and squash facilities', 'Encourages work-life balance', 'Fitness and social outlets in one location'],
             target: 'Active travelers and socialites looking for entertainment',
-            image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2670&auto=format&fit=crop'
+            image: '/gym-img.jpg'
         },
         {
             id: 'business',
@@ -57,7 +57,7 @@ export default function ServicesPage() {
             description: 'Maintain peak productivity with our 24/7 facility providing high-speed internet and comprehensive administrative support.',
             benefits: ['Ensures high productivity with reliable office infrastructure', 'Multilingual staff available to assist diplomatic delegations', 'Remote work support'],
             target: 'Remote workers and international consultants',
-            image: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=2670&auto=format&fit=crop'
+            image: '/business-img.jpg'
         }
     ];
 
@@ -67,7 +67,7 @@ export default function ServicesPage() {
             <div className="relative h-[60vh] flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 bg-black/50 z-10" />
                 <Image
-                    src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2670&auto=format&fit=crop"
+                    src="/reception-img.jpg"
                     alt="Products and Services"
                     fill
                     className="object-cover"

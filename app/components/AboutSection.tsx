@@ -17,7 +17,7 @@ export default function AboutSection() {
         {
             title: "Philosophy",
             icon: Lightbulb,
-            description: "Operate with a strategy that blends physical location advantage with a philosophy of relentless guest satisfaction."
+            description: "Operate with a strategy that blends it’s physical location advantage with a philosophy of relentless guest satisfaction, ensuring it remains a cornerstone of Abuja’s hospitality sector"
         }
     ];
 

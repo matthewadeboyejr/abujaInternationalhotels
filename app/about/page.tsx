@@ -13,7 +13,7 @@ export default function AboutPage() {
             <div className="relative h-[60vh] flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 bg-black/50 z-10" />
                 <Image
-                    src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    src="/reception-img.jpg"
                     alt="Abuja International Hotels Exterior"
                     fill
                     className="object-cover"
@@ -25,7 +25,43 @@ export default function AboutPage() {
                 </div>
             </div>
 
-            {/* Company Overview & History Timeline */}
+            {/* Company Overview */}
+            <section className="py-24 bg-white dark:bg-black">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                        <div className="space-y-6">
+                            <h2 className="text-sm font-bold tracking-[0.2em] text-[#DC833D] uppercase">
+                                Company Overview
+                            </h2>
+                            <h3 className="text-3xl md:text-4xl font-serif text-black dark:text-white">
+                                A Legacy of Nigerian Hospitality
+                            </h3>
+                            <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                                Abuja International Hotels Plc offers unparalleled luxury and comfort in the heart of
+                                Abuja. A premier destination for business and leisure. set against the spectacular
+                                backdrop of Aso Rock, right at the center of the Federal Capital
+                                Territory.
+                            </p>
+                            <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                                The hotel came into existence as a result of Nigeria hosting
+                                of the Commonwealth Head of Government Meeting (CHOGM) in 2003
+                                as it received the privilege to accommodate members of the
+                                Commonwealth Business Forum
+                            </p>
+                        </div>
+                        <div className="relative h-80 rounded-lg overflow-hidden shadow-xl">
+                            <Image
+                                src="/reception-img.jpg"
+                                alt="Abuja International Hotels Interior"
+                                fill
+                                className="object-cover"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* History Timeline */}
             <TimelineSection />
 
             {/* Strategy Section (Vision, Mission, Philosophy) */}
@@ -71,7 +107,7 @@ export default function AboutPage() {
                             </div>
                             <h4 className="text-2xl font-serif text-black dark:text-white mb-6">Philosophy</h4>
                             <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                                Abuja International Hotels operate with a strategy that blends its physical location advantage with a philosophy of relentless guest satisfaction.
+                                Operate with a strategy that blends it’s physical location advantage with a philosophy of relentless guest satisfaction, ensuring it remains a cornerstone of Abuja’s hospitality sector
                             </p>
                         </div>
                     </div>

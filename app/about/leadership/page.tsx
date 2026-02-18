@@ -11,7 +11,7 @@ export default function LeadershipPage() {
             <div className="relative h-[50vh] flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 bg-black/60 z-10" />
                 <Image
-                    src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1632&auto=format&fit=crop"
+                    src="/nicon.jpg"
                     alt="Leadership Meeting"
                     fill
                     className="object-cover"
@@ -72,9 +72,9 @@ export default function LeadershipPage() {
                         We adhere to a strict corporate governance framework designed to ensure accountability, fairness, and transparency in our relationship with all stakeholders.
                         Our governance structure is aligned with best practices for regulated firms, ensuring robust oversight and strategic direction.
                     </p>
-                    <p className="text-sm text-gray-500 uppercase tracking-wide font-medium">
+                    {/*  <p className="text-sm text-gray-500 uppercase tracking-wide font-medium">
                         (Detailed Governance Structure to be provided)
-                    </p>
+                    </p> */}
                 </div>
 
                 {/* Management Section / Note */}

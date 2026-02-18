@@ -10,7 +10,7 @@ export default function ShareholdingPage() {
             <div className="relative h-[50vh] flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 bg-black/60 z-10" />
                 <Image
-                    src="https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?q=80&w=2573&auto=format&fit=crop"
+                    src="/nicon.jpg"
                     alt="Shareholding"
                     fill
                     className="object-cover"

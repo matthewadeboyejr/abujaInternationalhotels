@@ -1,7 +1,5 @@
 'use client';
 
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
 import CommitmentSection from '../components/CommitmentSection';
 import { Mail, Phone, MapPin, MessageCircle, Clock, ArrowRight } from 'lucide-react';
 import Image from 'next/image';
@@ -20,7 +18,7 @@ export default function ContactPage() {
             <div className="relative h-[50vh] flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 bg-black/60 z-10" />
                 <Image
-                    src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    src="/pool-img.jpg"
                     alt="Contact Us"
                     fill
                     className="object-cover"
@@ -80,8 +78,8 @@ export default function ContactPage() {
                                 <div className="space-y-1">
                                     <h4 className="font-serif text-xl text-black dark:text-white">Email Us</h4>
                                     <p className="text-gray-600 dark:text-gray-400 font-light">Our friendly team is here to help.</p>
-                                    <a href="mailto:info@niconluxury.com" className="text-black dark:text-white font-medium hover:text-[#DC833D] transition-colors inline-flex items-center gap-2 mt-1">
-                                        info@niconluxury.com <ArrowRight className="w-4 h-4" />
+                                    <a href="mailto:info@abujainternationalhotels.com" className="text-black dark:text-white font-medium hover:text-[#DC833D] transition-colors inline-flex items-center gap-2 mt-1">
+                                        Email Us <ArrowRight className="w-4 h-4" />
                                     </a>
                                 </div>
                             </div>

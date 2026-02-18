@@ -14,24 +14,19 @@ const timelineEvents: TimelineEvent[] = [
         year: "2003",
         title: "The Beginning",
         description: "Abuja International Hotels came into existence to host the Commonwealth Head of Government Meeting (CHOGM), welcoming dignitaries from around the world.",
-        image: "https://images.unsplash.com/photo-1611892440504-42a792e24d32?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" // Using existing image as placeholder
+        image: "/reception-img.jpg"
     },
     {
-        year: "2010",
-        title: "Expansion & Renovation",
-        description: "A major renovation project updated our facilities to meet modern luxury standards, adding our signature pool and conference centers.",
-        image: "https://images.unsplash.com/photo-1611892440504-42a792e24d32?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" // Using existing image as placeholder
-    },
-    {
-        year: "2018",
-        title: "Award-Winning Service",
-        description: "Recognized as the premier destination in the Federal Capital Territory, winning multiple hospitality awards for excellence in service.",
+        year: "2007",
+        title: "A New Identity",
+        description: "The hotel transitioned to fully indigenous management, rebranding as Nicon Luxury Abuja while maintaining its commitment to world-class hospitality.",
+        image: "/nicon.jpg"
     },
     {
         year: "Present Day",
-        title: "A Contemporary Icon",
-        description: "Today, we remain the cornerstone of Abuja's hospitality, offering a perfect blend of traditional Nigerian warmth and world-class luxury.",
-        image: "https://images.unsplash.com/photo-1611892440504-42a792e24d32?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        title: "The Renaissance",
+        description: "Today, we are undertaking a comprehensive modernization program to blend our rich history with contemporary luxury standards.",
+        image: "/hero-img.jpg"
     }
 ];
 

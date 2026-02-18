@@ -34,7 +34,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-3 text-sm text-gray-400">
                 <Mail className="w-5 h-5 text-[#DC833D] shrink-0" />
-                <span>info@niconluxury.com</span>
+                <a href="mailto:info@abujainternationalhotels.com" className="hover:text-[#DC833D] transition-colors">Email Us</a>
               </div>
             </div>
 

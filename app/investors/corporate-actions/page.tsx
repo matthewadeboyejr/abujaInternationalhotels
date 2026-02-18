@@ -10,7 +10,7 @@ export default function CorporateActionsPage() {
             <div className="relative h-[50vh] flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 bg-black/60 z-10" />
                 <Image
-                    src="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=2574&auto=format&fit=crop"
+                    src="/nicon.jpg"
                     alt="Corporate Actions"
                     fill
                     className="object-cover"

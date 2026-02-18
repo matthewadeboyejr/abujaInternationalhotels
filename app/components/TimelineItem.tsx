@@ -35,7 +35,7 @@ export default function TimelineItem({ year, title, description, image, isLeft, 
                     </div>
                     <h3 className="text-xl font-serif text-black dark:text-white mb-3 group-hover:text-[#DC833D] transition-colors">{title}</h3>
                     <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-sm">{description}</p>
-                    
+
                     {image && (
                         <div className="mt-4 relative h-48 w-full rounded-lg overflow-hidden">
                             <Image
