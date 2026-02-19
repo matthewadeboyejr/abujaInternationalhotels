@@ -10,7 +10,7 @@ export default function HeroSection() {
       {/* Visual Part - Undisturbed Image */}
       <div className="relative h-[85vh] w-full overflow-hidden">
         <Image
-          src="/hero-img.jpg"
+          src="/heroimg.jpg"
           alt="Abuja International Hotels Luxury"
           fill
           className="object-cover"
