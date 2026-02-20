@@ -12,7 +12,7 @@ export default function ServicesPage() {
             description: 'Experience unparalleled comfort in one of our 253 guestrooms, ranging from Classic rooms to our exquisite Presidential Suites.',
             benefits: ['Privacy, comfort, and a "home away from home" environment', 'Unique views of Aso Rock and city skyline', 'Private balconies for every room'],
             target: 'Business Travelers, Diplomats, and Families',
-            image: '/logde-img.jpg'
+            image: '/lodge-img.jpeg'
         },
         {
             id: 'conference',
