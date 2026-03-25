@@ -1,127 +1,61 @@
 import Link from 'next/link';
-import Image from 'next/image';
-import { Facebook, Instagram, Twitter, MapPin, Phone, Mail } from 'lucide-react';
+import { Linkedin, Link as LinkIcon, Phone } from 'lucide-react';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="w-full bg-zinc-900 text-white border-t border-[#DC833D]/20 pt-16 pb-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+    <footer className="w-full bg-[#ECE08F]/20 text-[#1a2b4b] pt-20 pb-12 font-sans">
+      <div className=" px-4 md:px-8 lg:px-16">
 
-          {/* Brand & Contact Column */}
+        {/* Top Section */}
+        <div className="mb-20">
+          <h2 className="text-2xl md:text-3xl font-serif mb-8 tracking-tight">Abuja International Hotels</h2>
+
+          <div className="space-y-1 text-sm md:text-base text-gray-700 mb-8">
+            <p>Plot 903, Tafawa Balewa Way,</p>
+            <p>Area 11, Garki, Abuja</p>
+          </div>
+
           <div className="space-y-6">
-            <Link href="/" className="block relative h-12 w-40">
-              <img
-                src="/logo.png"
-                alt="Abuja International Hotels"
-                className="h-full w-auto object-contain brightness-0 invert"
-              />
+            <a href="tel:+2348095556005" className="flex items-center gap-3 hover:text-[#DC833D] transition-colors group">
+              <Phone className="w-5 h-5" />
+              <span className="font-semibold">(234) 809-555-6005</span>
+            </a>
+
+            <Link href="/newsletters" className="flex items-center gap-3 hover:text-[#DC833D] transition-colors group">
+              <LinkIcon className="w-5 h-5 translate-y-px" />
+              <span className="font-semibold">Sign Up for Email Alerts</span>
             </Link>
-            <p className="text-gray-400 text-sm leading-relaxed">
-              Unparalleled luxury and comfort in the heart of Abuja. Set against the spectacular backdrop of Aso Rock.
-            </p>
-
-            <div className="space-y-4 pt-4">
-              <div className="flex items-start gap-3 text-sm text-gray-400">
-                <MapPin className="w-5 h-5 text-[#DC833D] shrink-0" />
-                <span>Plot 903, Tafawa Balewa Way,<br />Area 11, Garki, Abuja</span>
-              </div>
-              <div className="flex items-center gap-3 text-sm text-gray-400">
-                <Phone className="w-5 h-5 text-[#DC833D] shrink-0" />
-                <span>+234 809 555 6005</span>
-              </div>
-              <div className="flex items-center gap-3 text-sm text-gray-400">
-                <Mail className="w-5 h-5 text-[#DC833D] shrink-0" />
-                <a href="mailto:info@abujainternationalhotels.com" className="hover:text-[#DC833D] transition-colors">Email Us</a>
-              </div>
-            </div>
-
-            <div className="flex space-x-4 pt-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-[#DC833D] hover:text-white transition-all">
-                <Facebook className="w-5 h-5" />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-[#DC833D] hover:text-white transition-all">
-                <Instagram className="w-5 h-5" />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-[#DC833D] hover:text-white transition-all">
-                <Twitter className="w-5 h-5" />
-              </a>
-            </div>
           </div>
-
-          {/* Company Links */}
-          <div>
-            <h3 className="text-lg font-serif font-bold text-white mb-6 border-b border-[#DC833D]/30 pb-2 inline-block">Company</h3>
-            <ul className="space-y-3">
-              <li>
-                <Link href="/" className="text-gray-400 hover:text-[#DC833D] transition-colors text-sm">Home</Link>
-              </li>
-              <li>
-                <Link href="/about" className="text-gray-400 hover:text-[#DC833D] transition-colors text-sm">Our Story</Link>
-              </li>
-              <li>
-                <Link href="/about/leadership" className="text-gray-400 hover:text-[#DC833D] transition-colors text-sm">Leadership & Board</Link>
-              </li>
-              <li>
-                <Link href="/contact" className="text-gray-400 hover:text-[#DC833D] transition-colors text-sm">Contact Us</Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Products & Services */}
-          <div>
-            <h3 className="text-lg font-serif font-bold text-white mb-6 border-b border-[#DC833D]/30 pb-2 inline-block">Products & Services</h3>
-            <ul className="space-y-3">
-              <li>
-                <Link href="/services#lodging" className="text-gray-400 hover:text-[#DC833D] transition-colors text-sm">Luxury Lodging</Link>
-              </li>
-              <li>
-                <Link href="/services#conference" className="text-gray-400 hover:text-[#DC833D] transition-colors text-sm">Conference & Events</Link>
-              </li>
-              <li>
-                <Link href="/services#dining" className="text-gray-400 hover:text-[#DC833D] transition-colors text-sm">Fine Dining</Link>
-              </li>
-              <li>
-                <Link href="/services#wellness" className="text-gray-400 hover:text-[#DC833D] transition-colors text-sm">Wellness & Spa</Link>
-              </li>
-              <li>
-                <Link href="/services#sports" className="text-gray-400 hover:text-[#DC833D] transition-colors text-sm">Sports & Leisure</Link>
-              </li>
-              <li>
-                <Link href="/services#business" className="text-gray-400 hover:text-[#DC833D] transition-colors text-sm">Business Centre</Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Investor Relations */}
-          <div>
-            <h3 className="text-lg font-serif font-bold text-white mb-6 border-b border-[#DC833D]/30 pb-2 inline-block">Investor Relations</h3>
-            <ul className="space-y-3">
-              <li>
-                <Link href="/investors/financial-reports" className="text-gray-400 hover:text-[#DC833D] transition-colors text-sm">Financial Reports</Link>
-              </li>
-              <li>
-                <Link href="/investors/corporate-actions" className="text-gray-400 hover:text-[#DC833D] transition-colors text-sm">Corporate Actions</Link>
-              </li>
-              <li>
-                <Link href="/investors/shareholding" className="text-gray-400 hover:text-[#DC833D] transition-colors text-sm">Shareholding Info</Link>
-              </li>
-            </ul>
-          </div>
-
         </div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-gray-500">
-            © {currentYear} Abuja International Hotels. All Rights Reserved.
-          </p>
-          <div className="flex gap-6 text-sm text-gray-500">
-            <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>
-            <Link href="#" className="hover:text-white transition-colors">Terms of Service</Link>
+        {/* Divider */}
+        <div className="w-full h-px bg-gray-300 mb-12" />
+
+        {/* Bottom Section */}
+        <div className="flex flex-col space-y-12">
+          {/* Main Links Row */}
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+            <div className="flex flex-wrap items-center gap-8 md:gap-12">
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#DC833D] transition-colors">
+                <Linkedin className="w-6 h-6 fill-current" />
+              </a>
+              <Link href="/site-map" className="text-sm font-bold tracking-widest uppercase hover:text-[#DC833D] transition-colors">Sitemap</Link>
+              <Link href="/contact" className="text-sm font-bold tracking-widest uppercase hover:text-[#DC833D] transition-colors">Contact</Link>
+              <Link href="/careers" className="text-sm font-bold tracking-widest uppercase hover:text-[#DC833D] transition-colors">Careers</Link>
+            </div>
+
+            <div className="flex flex-wrap items-center gap-8 md:gap-12">
+              <Link href="/terms" className="text-sm font-bold tracking-widest uppercase hover:text-[#DC833D] transition-colors">Terms of Use</Link>
+              <Link href="/privacy" className="text-sm font-bold tracking-widest uppercase hover:text-[#DC833D] transition-colors">Privacy Policy</Link>
+            </div>
           </div>
+
+          {/* Copyright */}
+          <p className="text-xs md:text-sm text-gray-500 font-medium">
+            Copyright © 2006 - {currentYear} Abuja International Hotels. All Rights Reserved.
+          </p>
         </div>
       </div>
     </footer>

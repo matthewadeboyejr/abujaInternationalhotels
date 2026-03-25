@@ -40,10 +40,8 @@ export default function TimelineSection() {
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="text-center mb-16">
-                    <h2 className="text-sm font-bold tracking-[0.2em] text-[#DC833D] uppercase mb-4">
-                        Our Journey
-                    </h2>
-                    <h3 className="text-3xl md:text-5xl font-serif text-black dark:text-white">
+
+                    <h3 className="text-3xl md:text-5xl font-quicksand text-black dark:text-white">
                         A History of Excellence
                     </h3>
                 </div>

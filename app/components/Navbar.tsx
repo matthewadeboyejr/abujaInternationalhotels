@@ -2,29 +2,60 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, X, Search, Globe, User, ChevronRight, ArrowLeft } from 'lucide-react';
-import { ModeToggle } from './ModeToggle';
+import { Menu, X, Search, ChevronDown, Linkedin, Twitter, Facebook } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+
+const mainMenuItems = [
+  {
+    title: 'Our Portfolio',
+    href: '/portfolio',
+  },
+  {
+    title: 'Investor Relations',
+    submenu: [
+      { title: 'Investor Overview', href: '/investors/overview' },
+      { title: 'Quarterly Results', href: '/investors/results?tab=quarterly-results' },
+      { title: 'SEC Filings', href: '/investors/results?tab=sec-filings' },
+      { title: 'Annual Reports', href: '/investors/results?tab=annual-reports' },
+      { title: 'Stock Information ', href: '/investors/stock-information' },
+      { title: 'Press Releases/ News ', href: '/investors/press-releases' },
+      { title: 'FAQs', href: '/investors/faqs' },
+      { title: 'Key Investor Materials ', href: '/investors/key-materials' },
+
+    ],
+  },
+  {
+    title: 'Our Company',
+    submenu: [
+      { title: 'Company Overview', href: '/about/overview' },
+      { title: 'Corporate Strategy', href: '/about/corporate-strategy' },
+      { title: 'Leadership', href: '/about/leadership' },
+      { title: 'Corporate Governance', href: '/about/corporate-governance' },
+      { title: 'History', href: '/about/history' },
+      { title: 'Photo Gallery', href: '/about/photo-gallery' },
+    ],
+  },
+];
+
+const footerLinks = [
+  { title: 'Contact', href: '/contact' },
+  { title: 'Investor FAQs', href: '/investors/faqs' },
+
+];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [menuView, setMenuView] = useState<'main' | 'about' | 'investors' | 'services'>('main');
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
+  // Scroll tracking
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  // Reset menu view when closed
-  useEffect(() => {
-    if (!isOpen) {
-      const timer = setTimeout(() => setMenuView('main'), 300);
-      return () => clearTimeout(timer);
-    }
-  }, [isOpen]);
 
   // Prevent body scroll when menu is open
   useEffect(() => {
@@ -38,327 +69,169 @@ export default function Navbar() {
     };
   }, [isOpen]);
 
+  const toggleAccordion = (index: number) => {
+    setExpandedIndex(expandedIndex === index ? null : index);
+  };
+
   return (
     <>
-      <nav
-        className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white/95 dark:bg-black/95 backdrop-blur-md shadow-sm py-2' : 'bg-transparent py-4'
-          }`}
+      {/* Persistent "Logo | Menu" Box */}
+      <motion.div
+        initial={false}
+        animate={{
+          top: isScrolled ? 24 : 32,
+          left: isScrolled ? 24 : 32,
+        }}
+        className="fixed z-60 flex items-stretch bg-white shadow-2xl border border-gray-100 overflow-hidden rounded-sm"
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col">
+        <motion.div
+          initial={false}
+          animate={{
+            width: isScrolled ? 0 : 'auto',
+            opacity: isScrolled ? 0 : 1,
+          }}
+          transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
+          className="overflow-hidden border-r border-gray-100 whitespace-nowrap"
+        >
+          <Link href="/" className="px-6 py-4 hover:bg-gray-50 transition-colors flex items-center justify-center min-w-[140px] h-full">
+            <img src="/logo.png" alt="Abuja International" className="h-10 w-auto object-contain" />
+          </Link>
+        </motion.div>
 
-            {/* Top Utility Bar (Desktop) */}
-            <div className={`hidden md:flex justify-end items-center space-x-6 text-sm mb-4 transition-opacity duration-300 ${isScrolled ? 'opacity-0 h-0 overflow-hidden mb-0' : 'opacity-100'}`}>
-              <div className="flex items-center space-x-6 text-white/90">
-                <button className="hover:text-white flex items-center gap-1 group">
-                  <Search className="w-4 h-4 group-hover:scale-110 transition-transform" />
-                  <span>Search</span>
-                </button>
-                <button className="hover:text-white flex items-center gap-1 group">
-                  <Globe className="w-4 h-4 group-hover:scale-110 transition-transform" />
-                  <span>EN</span>
-                </button>
-                <button className="hover:text-white flex items-center gap-1 group">
-                  <User className="w-4 h-4 group-hover:scale-110 transition-transform" />
-                  <span>Login / Join</span>
-                </button>
-              </div>
-            </div>
+        <button
+          onClick={() => setIsOpen(true)}
+          className="px-6 py-4 hover:bg-gray-50 transition-colors flex items-center justify-center min-w-[72px] md:min-w-[80px]"
+        >
+          <Menu className="w-8 h-8 text-[#1a2b4b]" />
+        </button>
+      </motion.div>
 
-            {/* Main Navigation Bar */}
-            <div className="flex items-center justify-between">
-              {/* Logo */}
-              <div className="shrink-0 relative z-50">
-                <Link href="/" className="block relative h-12 w-48">
-                  <img
-                    src="/logo.png"
-                    alt="Abuja International Hotels"
-                    className={`h-full w-auto object-contain transition-all duration-300 ${isOpen ? 'brightness-0 invert dark:invert-0' : ''}`}
-                  />
-                </Link>
-              </div>
-
-              {/* Desktop Navigation Links */}
-              <div className={`hidden md:flex items-center space-x-8 font-medium text-sm tracking-wide ${isScrolled ? 'text-gray-800 dark:text-gray-200' : 'text-white'}`}>
-                <Link href="/" className="hover:opacity-75 transition-opacity">HOME</Link>
-
-                {/* About Us Dropdown - Mega Menu */}
-                <div className="group static">
-                  <button className="hover:opacity-75 transition-opacity flex items-center gap-1 h-full py-6">
-                    ABOUT US
-                  </button>
-
-                  {/* Full Width Dropdown Panel */}
-                  <div className="fixed left-0 top-[var(--navbar-height,80px)] w-full bg-[#FDFBF7] dark:bg-zinc-900 border-t border-gray-100 dark:border-zinc-800 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top z-40">
-                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-                      <div className="grid grid-cols-12 gap-8">
-                        {/* Header Section */}
-                        <div className="col-span-12 md:col-span-4 border-b md:border-b-0 md:border-r border-[#DC833D]/30 pb-6 md:pb-0">
-                          <h3 className="text-sm font-bold tracking-[0.2em] text-[#DC833D] uppercase mb-2 flex items-center gap-2">
-                            Abuja International At A Glance
-                            <span className="hidden md:inline-block">→</span>
-                          </h3>
-                        </div>
-
-                        {/* Links Section */}
-                        <div className="col-span-12 md:col-span-8 flex flex-col space-y-4 pt-6 md:pt-0 md:pl-12">
-                          <Link href="/about" className="text-3xl font-serif text-black dark:text-white hover:text-[#DC833D] transition-colors w-fit">
-                            Our Story
-                          </Link>
-                          <Link href="/about/leadership" className="text-3xl font-serif text-black dark:text-white hover:text-[#DC833D] transition-colors w-fit">
-                            Leadership & Governance
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Investor Relations Dropdown - Mega Menu */}
-                <div className="group static">
-                  <button className="hover:opacity-75 transition-opacity flex items-center gap-1 h-full py-6">
-                    INVESTOR RELATIONS
-                  </button>
-
-                  {/* Full Width Dropdown Panel */}
-                  <div className="fixed left-0 top-[var(--navbar-height,80px)] w-full bg-[#FDFBF7] dark:bg-zinc-900 border-t border-gray-100 dark:border-zinc-800 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top z-40">
-                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-                      <div className="grid grid-cols-12 gap-8">
-                        {/* Header Section */}
-                        <div className="col-span-12 md:col-span-4 border-b md:border-b-0 md:border-r border-[#DC833D]/30 pb-6 md:pb-0">
-                          <h3 className="text-sm font-bold tracking-[0.2em] text-[#DC833D] uppercase mb-2 flex items-center gap-2">
-                            Investor Information
-                            <span className="hidden md:inline-block">→</span>
-                          </h3>
-                        </div>
-
-                        {/* Links Section */}
-                        <div className="col-span-12 md:col-span-8 flex flex-col space-y-4 pt-6 md:pt-0 md:pl-12">
-                          <Link href="/investors/financial-reports" className="text-3xl font-serif text-black dark:text-white hover:text-[#DC833D] transition-colors w-fit">
-                            Financial Reports
-                          </Link>
-                          <Link href="/investors/corporate-actions" className="text-3xl font-serif text-black dark:text-white hover:text-[#DC833D] transition-colors w-fit">
-                            Corporate Actions & Announcements
-                          </Link>
-                          <Link href="/investors/shareholding" className="text-3xl font-serif text-black dark:text-white hover:text-[#DC833D] transition-colors w-fit">
-                            Shareholding / Capital Info
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-
-                {/* Products & Services Dropdown - Mega Menu */}
-                <div className="group static">
-                  <button className="hover:opacity-75 transition-opacity flex items-center gap-1 h-full py-6">
-                    PRODUCTS & SERVICES
-                  </button>
-
-                  {/* Full Width Dropdown Panel */}
-                  <div className="fixed left-0 top-[var(--navbar-height,80px)] w-full bg-[#FDFBF7] dark:bg-zinc-900 border-t border-gray-100 dark:border-zinc-800 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top z-40">
-                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-                      <div className="grid grid-cols-12 gap-8">
-                        {/* Header Section */}
-                        <div className="col-span-12 md:col-span-3 border-b md:border-b-0 md:border-r border-[#DC833D]/30 pb-6 md:pb-0">
-                          <h3 className="text-sm font-bold tracking-[0.2em] text-[#DC833D] uppercase mb-2">Our Offerings</h3>
-                          <p className="text-gray-500 text-sm">Discover world-class facilities tailored to your needs.</p>
-                        </div>
-
-                        {/* Links Section - 2 Columns */}
-                        <div className="col-span-12 md:col-span-9 grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4 pt-6 md:pt-0 md:pl-12">
-                          <Link href="/services#lodging" className="text-2xl font-serif text-black dark:text-white hover:text-[#DC833D] transition-colors w-fit">
-                            Luxury Lodging
-                          </Link>
-                          <Link href="/services#conference" className="text-2xl font-serif text-black dark:text-white hover:text-[#DC833D] transition-colors w-fit">
-                            Conference & Events
-                          </Link>
-                          <Link href="/services#dining" className="text-2xl font-serif text-black dark:text-white hover:text-[#DC833D] transition-colors w-fit">
-                            Fine Dining
-                          </Link>
-                          <Link href="/services#wellness" className="text-2xl font-serif text-black dark:text-white hover:text-[#DC833D] transition-colors w-fit">
-                            Wellness & Spa
-                          </Link>
-                          <Link href="/services#sports" className="text-2xl font-serif text-black dark:text-white hover:text-[#DC833D] transition-colors w-fit">
-                            Sports & Leisure
-                          </Link>
-                          <Link href="/services#business" className="text-2xl font-serif text-black dark:text-white hover:text-[#DC833D] transition-colors w-fit">
-                            Business Centre
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <Link href="/contact" className="hover:opacity-75 transition-opacity">CONTACT</Link>
-              </div>
-
-              {/* Book Now Button (Always Visible) */}
-              <div className="hidden md:flex items-center space-x-4">
-                <ModeToggle />
-              </div>
-
-              {/* Mobile Menu Button - Z-index ensure it's above overlay */}
-              <div className="md:hidden flex items-center gap-4 relative z-50">
-                <ModeToggle />
-                <button
-                  onClick={() => setIsOpen(!isOpen)}
-                  className={`focus:outline-none transition-colors duration-300 ${isOpen ? 'text-black dark:text-white' : (isScrolled ? 'text-black dark:text-white' : 'text-white')}`}
-                >
-                  {isOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </nav>
-
-      {/* Mobile Menu Overlay - Full Screen */}
-      <div
-        className={`fixed inset-0 bg-[#FDFBF7] dark:bg-zinc-950 z-40 transition-transform duration-500 ease-in-out md:hidden ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}
-      >
-        <div className="flex flex-col h-full pt-28 px-6 pb-8 overflow-y-auto">
-
-          {/* Main Menu View */}
-          <div className={`flex flex-col space-y-8 transition-opacity duration-300 ${menuView === 'main' ? 'opacity-100 flex' : 'opacity-0 hidden absolute'}`}>
-            <button
-              onClick={() => setMenuView('about')}
-              className="group flex items-center justify-between w-full text-left py-4 border-b border-gray-200 dark:border-zinc-800"
-            >
-              <span className="text-xl font-medium text-black dark:text-white">ABOUT US</span>
-              <ChevronRight className="w-5 h-5 text-[#DC833D] group-hover:translate-x-1 transition-transform" />
-            </button>
-
-            <button
-              onClick={() => setMenuView('services')}
-              className="group flex items-center justify-between w-full text-left py-4 border-b border-gray-200 dark:border-zinc-800"
-            >
-              <span className="text-xl font-medium text-black dark:text-white">PRODUCTS & SERVICES</span>
-              <ChevronRight className="w-5 h-5 text-[#DC833D] group-hover:translate-x-1 transition-transform" />
-            </button>
-
-            <button
-              onClick={() => setMenuView('investors')}
-              className="group flex items-center justify-between w-full text-left py-4 border-b border-gray-200 dark:border-zinc-800"
-            >
-              <span className="text-xl font-medium text-black dark:text-white">INVESTOR RELATIONS</span>
-              <ChevronRight className="w-5 h-5 text-[#DC833D] group-hover:translate-x-1 transition-transform" />
-            </button>
-
-            <Link
-              href="/contact"
+      {/* Drawer Overlay with Backdrop */}
+      <AnimatePresence>
+        {isOpen && (
+          <>
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
               onClick={() => setIsOpen(false)}
-              className="group flex items-center justify-between w-full text-left py-4 border-b border-gray-200 dark:border-zinc-800"
+              className="fixed inset-0 bg-black/40 backdrop-blur-sm z-70"
+            />
+
+            {/* Side Drawer */}
+            <motion.div
+              initial={{ x: '-100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '-100%' }}
+              transition={{ type: 'spring', damping: 30, stiffness: 300, mass: 0.8 }}
+              className="fixed inset-y-0 left-0 w-full md:w-[480px] bg-white z-80 shadow-2xl flex flex-col h-full overflow-hidden"
             >
-              <span className="text-xl font-medium text-black dark:text-white">CONTACT</span>
-              <ChevronRight className="w-5 h-5 text-[#DC833D] group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </div>
+              {/* Drawer Header (Sticky-ish) */}
+              <div className="px-6 md:px-12 py-10 flex flex-col items-center relative border-b border-gray-100">
+                <button
+                  onClick={() => setIsOpen(false)}
+                  className="absolute right-4 top-4 p-2 hover:bg-gray-100 rounded-full transition-colors group"
+                >
+                  <X className="w-8 h-8 text-[#1a2b4b] group-hover:rotate-90 transition-transform duration-300" />
+                </button>
+                <Link href="/" onClick={() => setIsOpen(false)} className="mb-8">
+                  <img src="/logo.png" alt="Abuja International" className="h-12 md:h-14 w-auto object-contain" />
+                </Link>
 
-          {/* Submenu Views */}
-          {/* About Us Submenu */}
-          <div className={`flex flex-col space-y-6 transition-all duration-300 ${menuView === 'about' ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full hidden absolute'}`}>
-            <button
-              onClick={() => setMenuView('main')}
-              className="flex items-center gap-2 text-[#DC833D] font-medium mb-4"
-            >
-              <ArrowLeft className="w-5 h-5" />
-              <span>Back</span>
-            </button>
-
-            <h3 className="text-2xl font-serif text-black dark:text-white mb-6">ABOUT US</h3>
-
-            <div className="space-y-4 pl-4">
-              <Link href="/about" onClick={() => setIsOpen(false)} className="block py-2 text-lg text-gray-600 dark:text-gray-300 hover:text-[#DC833D]">
-                Our Story
-              </Link>
-              <Link href="/about/leadership" onClick={() => setIsOpen(false)} className="block py-2 text-lg text-gray-600 dark:text-gray-300 hover:text-[#DC833D]">
-                Leadership & Governance
-              </Link>
-            </div>
-          </div>
-
-          {/* Services Submenu */}
-          <div className={`flex flex-col space-y-6 transition-all duration-300 ${menuView === 'services' ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full hidden absolute'}`}>
-            <button
-              onClick={() => setMenuView('main')}
-              className="flex items-center gap-2 text-[#DC833D] font-medium mb-4"
-            >
-              <ArrowLeft className="w-5 h-5" />
-              <span>Back</span>
-            </button>
-
-            <h3 className="text-2xl font-serif text-black dark:text-white mb-6">PRODUCTS & SERVICES</h3>
-
-            <div className="space-y-4 pl-4">
-              <Link href="/services#lodging" onClick={() => setIsOpen(false)} className="block py-2 text-lg text-gray-600 dark:text-gray-300 hover:text-[#DC833D]">
-                Luxury Lodging
-              </Link>
-              <Link href="/services#conference" onClick={() => setIsOpen(false)} className="block py-2 text-lg text-gray-600 dark:text-gray-300 hover:text-[#DC833D]">
-                Conference & Events
-              </Link>
-              <Link href="/services#dining" onClick={() => setIsOpen(false)} className="block py-2 text-lg text-gray-600 dark:text-gray-300 hover:text-[#DC833D]">
-                Fine Dining
-              </Link>
-              <Link href="/services#wellness" onClick={() => setIsOpen(false)} className="block py-2 text-lg text-gray-600 dark:text-gray-300 hover:text-[#DC833D]">
-                Wellness & Spa
-              </Link>
-              <Link href="/services#sports" onClick={() => setIsOpen(false)} className="block py-2 text-lg text-gray-600 dark:text-gray-300 hover:text-[#DC833D]">
-                Sports & Leisure
-              </Link>
-              <Link href="/services#business" onClick={() => setIsOpen(false)} className="block py-2 text-lg text-gray-600 dark:text-gray-300 hover:text-[#DC833D]">
-                Business Centre
-              </Link>
-            </div>
-          </div>
-
-          {/* Investors Submenu */}
-          <div className={`flex flex-col space-y-6 transition-all duration-300 ${menuView === 'investors' ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full hidden absolute'}`}>
-            <button
-              onClick={() => setMenuView('main')}
-              className="flex items-center gap-2 text-[#DC833D] font-medium mb-4"
-            >
-              <ArrowLeft className="w-5 h-5" />
-              <span>Back</span>
-            </button>
-
-            <h3 className="text-2xl font-serif text-black dark:text-white mb-6">INVESTOR RELATIONS</h3>
-
-            <div className="space-y-4 pl-4">
-              <Link href="/investors/financial-reports" onClick={() => setIsOpen(false)} className="block py-2 text-lg text-gray-600 dark:text-gray-300 hover:text-[#DC833D]">
-                Financial Reports
-              </Link>
-              <Link href="/investors/corporate-actions" onClick={() => setIsOpen(false)} className="block py-2 text-lg text-gray-600 dark:text-gray-300 hover:text-[#DC833D]">
-                Corporate Actions
-              </Link>
-              <Link href="/investors/shareholding" onClick={() => setIsOpen(false)} className="block py-2 text-lg text-gray-600 dark:text-gray-300 hover:text-[#DC833D]">
-                Shareholding Info
-              </Link>
-            </div>
-          </div>
-
-
-          <div className="mt-auto pt-8 border-t border-gray-200 dark:border-zinc-800">
-            <div className="flex flex-col gap-4 text-gray-500">
-              <button className="flex items-center gap-3 text-lg font-medium text-black dark:text-white">
-                <Search className="w-5 h-5" />
-                <span>Search</span>
-              </button>
-              <button className="flex items-center gap-3 text-lg font-medium text-black dark:text-white">
-                <User className="w-5 h-5" />
-                <span>Login / Join</span>
-              </button>
-              <div className="flex items-center gap-3 pt-4">
-                <ModeToggle />
-                <span className="text-sm font-medium">Theme</span>
+                {/* Search Bar inside Header area */}
+                <div className="relative w-full">
+                  <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                  <input
+                    type="text"
+                    placeholder="Search"
+                    className="w-full pl-12 pr-4 py-3 rounded-full border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#DC833D]/20 transition-all font-sans text-sm"
+                  />
+                </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
+
+              {/* Scrollable Content Area */}
+              <div className="flex-1 overflow-y-auto px-6 md:px-12 py-12 scrollbar-hide">
+                {/* Main Accordion Items */}
+                <div className="space-y-6">
+                  {mainMenuItems.map((item, index) => (
+                    <div key={index} className="border-b border-[#DC833D] pb-6 last:border-0 grow">
+                      {item.submenu ? (
+                        <div>
+                          <button
+                            onClick={() => toggleAccordion(index)}
+                            className="flex items-center justify-between w-full text-left group"
+                          >
+                            <span className="text-xl md:text-2xl font-serif text-[#1a2b4b] group-hover:text-[#DC833D] transition-colors tracking-tight">
+                              {item.title}
+                            </span>
+                            <ChevronDown
+                              className={`w-5 h-5 text-gray-400 transition-transform duration-300 ${expandedIndex === index ? 'rotate-180' : ''}`}
+                            />
+                          </button>
+                          <AnimatePresence initial={false}>
+                            {expandedIndex === index && (
+                              <motion.div
+                                initial={{ height: 0, opacity: 0 }}
+                                animate={{ height: 'auto', opacity: 1 }}
+                                exit={{ height: 0, opacity: 0 }}
+                                transition={{ duration: 0.3, ease: 'easeInOut' }}
+                                className="overflow-hidden"
+                              >
+                                <div className="pt-6 space-y-4 pl-4 border-l border-[#DC833D]/20">
+                                  {item.submenu.map((sub, sIdx) => (
+                                    <Link
+                                      key={sIdx}
+                                      href={sub.href}
+                                      onClick={() => setIsOpen(false)}
+                                      className="block text-[#1a2b4b]/80 hover:text-[#DC833D] transition-colors font-sans text-base md:text-lg"
+                                    >
+                                      {sub.title}
+                                    </Link>
+                                  ))}
+                                </div>
+                              </motion.div>
+                            )}
+                          </AnimatePresence>
+                        </div>
+                      ) : (
+                        <Link
+                          href={item.href}
+                          onClick={() => setIsOpen(false)}
+                          className="text-xl md:text-2xl font-serif text-[#1a2b4b] hover:text-[#DC833D] transition-colors tracking-tight block"
+                        >
+                          {item.title}
+                        </Link>
+                      )}
+                    </div>
+                  ))}
+                </div>
+
+                {/* Footer Style Links */}
+                <div className="mt-12 pt-12 border-t border-[#DC833D]/20 space-y-5">
+                  {footerLinks.map((link, index) => (
+                    <Link
+                      key={index}
+                      href={link.href}
+                      onClick={() => setIsOpen(false)}
+                      className="block text-lg font-serif text-[#1a2b4b] hover:text-[#DC833D] transition-colors tracking-tight"
+                    >
+                      {link.title}
+                    </Link>
+                  ))}
+                </div>
+
+                {/* Social Icons */}
+                <div className="mt-12 flex items-center gap-6 text-[#1a2b4b]/60">
+                  <a href="#" className="hover:text-[#DC833D] transition-colors p-2 hover:bg-gray-50 rounded-full"><Linkedin className="w-5 h-5" /></a>
+                  <a href="#" className="hover:text-[#DC833D] transition-colors p-2 hover:bg-gray-50 rounded-full"><Twitter className="w-5 h-5" /></a>
+                  <a href="#" className="hover:text-[#DC833D] transition-colors p-2 hover:bg-gray-50 rounded-full"><Facebook className="w-5 h-5" /></a>
+                </div>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </>
   );
 }

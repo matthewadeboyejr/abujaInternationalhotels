@@ -33,7 +33,7 @@ export default function TimelineItem({ year, title, description, image, isLeft, 
                         <Calendar className="w-4 h-4 text-[#DC833D]" />
                         <span className="text-sm font-bold text-[#DC833D] tracking-wider">{year}</span>
                     </div>
-                    <h3 className="text-xl font-serif text-black dark:text-white mb-3 group-hover:text-[#DC833D] transition-colors">{title}</h3>
+                    <h3 className="text-xl font-quicksand text-black dark:text-white mb-3 group-hover:text-[#DC833D] transition-colors">{title}</h3>
                     <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-sm">{description}</p>
 
                     {image && (

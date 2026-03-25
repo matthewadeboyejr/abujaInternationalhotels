@@ -22,7 +22,7 @@ export default function AboutSection() {
     ];
 
     return (
-        <section className="w-full bg-[#FAFAFA] dark:bg-zinc-900 py-24 md:py-32">
+        <section className="w-full bg-[#FAFAFA] dark:bg-zinc-900 pt-48 pb-24 md:pt-64 md:pb-32">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 {/* Section Header */}

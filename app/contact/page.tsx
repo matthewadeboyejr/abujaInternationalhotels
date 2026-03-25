@@ -3,6 +3,8 @@
 import CommitmentSection from '../components/CommitmentSection';
 import { Mail, Phone, MapPin, MessageCircle, Clock, ArrowRight } from 'lucide-react';
 import Image from 'next/image';
+import InvestorMaterial from '../components/InvestorMaterial';
+import Breadcrumbs from '../components/Breadcrumbs';
 
 export default function ContactPage() {
     const handleWhatsAppClick = () => {
@@ -15,20 +17,26 @@ export default function ContactPage() {
 
 
             {/* Hero Section - Full Width */}
-            <div className="relative h-[50vh] flex items-center justify-center overflow-hidden">
-                <div className="absolute inset-0 bg-black/60 z-10" />
-                <Image
-                    src="/pool-img.jpg"
-                    alt="Contact Us"
-                    fill
-                    className="object-cover"
-                    priority
-                />
-                <div className="relative z-20 text-center space-y-6 px-4 animate-fade-in-up">
-                    <p className="text-sm font-bold tracking-[0.3em] uppercase text-[#DC833D]">Get in Touch</p>
-                    <h1 className="text-5xl md:text-7xl font-serif text-white">Contact Us</h1>
+            {/* Hero Section */}
+            <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
+                <div className="absolute inset-0 z-0">
+                    <img
+                        src="/hero-img.jpg"
+                        alt="Photo Gallery Hero"
+                        className="w-full h-full object-cover text-white"
+                        loading="eager"
+                    />
+                    <div className="absolute inset-0 bg-black/40" />
                 </div>
-            </div>
+            </section>
+
+            <Breadcrumbs
+                items={[
+                    { title: 'Home', href: '/' },
+                    { title: 'Contact', href: '/contact' }
+                ]}
+                currentPage="Contact"
+            />
 
             {/* Contact Content */}
             <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
@@ -37,7 +45,7 @@ export default function ContactPage() {
                     {/* Information Column */}
                     <div className="space-y-12">
                         <div>
-                            <h2 className="text-4xl md:text-5xl font-serif text-black dark:text-white mb-6">We'd love to hear from you</h2>
+                            <h2 className="text-4xl md:text-5xl font-quicksand text-black dark:text-white mb-6">We'd love to hear from you</h2>
                             <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed font-light">
                                 Whether you have a question about our rooms, pricing, need a reservation, or anything else, our dedicated team is ready to answer all your questions.
                             </p>
@@ -50,7 +58,7 @@ export default function ContactPage() {
                                     <MapPin className="w-6 h-6 text-[#DC833D]" />
                                 </div>
                                 <div className="space-y-1">
-                                    <h4 className="font-serif text-xl text-black dark:text-white">Visit Us</h4>
+                                    <h4 className="font-quicksand text-xl text-black dark:text-white">Visit Us</h4>
                                     <p className="text-gray-600 dark:text-gray-400 font-light">Plot 903, Tafawa Balewa way,<br />Area 11, Garki, Abuja</p>
                                 </div>
                             </div>
@@ -61,7 +69,7 @@ export default function ContactPage() {
                                     <Phone className="w-6 h-6 text-[#DC833D]" />
                                 </div>
                                 <div className="space-y-1">
-                                    <h4 className="font-serif text-xl text-black dark:text-white">Call Us</h4>
+                                    <h4 className="font-quicksand text-xl text-black dark:text-white">Call Us</h4>
                                     <p className="text-gray-600 dark:text-gray-400 font-light">+234 809 555 6005</p>
                                     <div className="flex items-center gap-2 text-sm text-[#DC833D] mt-1">
                                         <Clock className="w-4 h-4" />
@@ -76,7 +84,7 @@ export default function ContactPage() {
                                     <Mail className="w-6 h-6 text-[#DC833D]" />
                                 </div>
                                 <div className="space-y-1">
-                                    <h4 className="font-serif text-xl text-black dark:text-white">Email Us</h4>
+                                    <h4 className="font-quicksand text-xl text-black dark:text-white">Email Us</h4>
                                     <p className="text-gray-600 dark:text-gray-400 font-light">Our friendly team is here to help.</p>
                                     <a href="mailto:info@abujainternationalhotels.com" className="text-black dark:text-white font-medium hover:text-[#DC833D] transition-colors inline-flex items-center gap-2 mt-1">
                                         Email Us <ArrowRight className="w-4 h-4" />
@@ -95,7 +103,7 @@ export default function ContactPage() {
                             <div className="w-20 h-20 bg-white dark:bg-black text-[#DC833D] rounded-full flex items-center justify-center mx-auto mb-8 shadow-sm">
                                 <MessageCircle className="w-10 h-10" />
                             </div>
-                            <h3 className="text-3xl font-serif text-black dark:text-white mb-4">Instant Support</h3>
+                            <h3 className="text-3xl font-quicksand text-black dark:text-white mb-4">Instant Support</h3>
                             <p className="text-gray-600 dark:text-gray-400 text-lg font-light leading-relaxed mb-8">
                                 Need immediate assistance? Start a conversation with our concierge team on WhatsApp for quick responses.
                             </p>
@@ -116,7 +124,7 @@ export default function ContactPage() {
 
                 </div>
             </section>
-
+            <InvestorMaterial />
             {/* Map Section - Full Width Edge to Edge */}
             <div className="h-[600px] w-full bg-gray-100 dark:bg-zinc-900 relative grayscale hover:grayscale-0 transition-all duration-700">
                 <iframe
@@ -134,7 +142,6 @@ export default function ContactPage() {
                 <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-white dark:from-black to-transparent pointer-events-none"></div>
             </div>
 
-            <CommitmentSection />
 
         </div>
     );
