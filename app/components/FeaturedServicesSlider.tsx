@@ -10,7 +10,7 @@ const services = [
     id: 'lodging',
     title: 'Luxury Lodging',
     description: 'Experience unparalleled comfort in one of our 253 guestrooms, ranging from Classic rooms to our exquisite Presidential Suites.',
-    image: '/lodge-img.jpeg'
+    image: '/lodge-img.jpg'
   },
   {
     id: 'conference',
@@ -81,7 +81,7 @@ export default function FeaturedServicesSlider() {
       {/* Bottom-Docked Control Bar */}
       <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10 z-20">
         <div className="flex flex-col md:flex-row items-end justify-between gap-8 backdrop-blur-md bg-white/10 border border-white/10 rounded-sm p-8 md:p-12 shadow-2xl relative overflow-hidden group/bar transition-all duration-500 hover:bg-white/15">
-          
+
           {/* Decorative Corner Accent */}
           <div className="absolute top-0 left-0 w-1 h-full bg-[#DC833D] opacity-70" />
 
@@ -121,9 +121,9 @@ export default function FeaturedServicesSlider() {
                 <ChevronLeft className="w-5 h-5" />
               </button>
               <div className="flex flex-col items-center min-w-[40px]">
-                 <span className="text-lg font-quicksand font-bold leading-none">{currentIndex + 1}</span>
-                 <div className="w-4 h-[1px] bg-white/30 my-1" />
-                 <span className="text-[10px] opacity-60 font-medium">{services.length}</span>
+                <span className="text-lg font-quicksand font-bold leading-none">{currentIndex + 1}</span>
+                <div className="w-4 h-[1px] bg-white/30 my-1" />
+                <span className="text-[10px] opacity-60 font-medium">{services.length}</span>
               </div>
               <button
                 onClick={nextSlide}
