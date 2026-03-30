@@ -7,16 +7,16 @@ import Breadcrumbs from '@/app/components/Breadcrumbs';
 import InvestorMaterial from '@/app/components/InvestorMaterial';
 
 const stockStats = [
-  { label: 'CHANGE', value: '+0.77', accent: 'text-green-600' },
-  { label: '% CHANGE', value: '+4.11%', accent: 'text-green-600' },
-  { label: 'VOLUME', value: '1,532,090', accent: 'text-[#1a2b4b]' },
+  { label: 'CHANGE', value: '+0.00', accent: 'text-green-600' },
+  { label: '% CHANGE', value: '+0.00%', accent: 'text-green-600' },
+  { label: 'VOLUME', value: '0', accent: 'text-[#1a2b4b]' },
 ];
 
 const secondaryStats = [
-  { label: 'PREVIOUS CLOSE', value: '18.60' },
-  { label: "TODAY'S OPEN", value: '19.05' },
-  { label: 'INTRADAY HIGH', value: '19.41' },
-  { label: 'INTRADAY LOW', value: '18.96' },
+  { label: 'PREVIOUS CLOSE', value: '0.00' },
+  { label: "TODAY'S OPEN", value: '0.00' },
+  { label: 'INTRADAY HIGH', value: '0.00' },
+  { label: 'INTRADAY LOW', value: '0.00' },
 ];
 
 const resourceLinks = [
@@ -65,10 +65,10 @@ export default function StockInformationPage() {
         {/* Price Card */}
         <div className="max-w-4xl mx-auto">
           <div className="mb-12">
-            <span className="text-[10px] font-bold tracking-widest text-gray-400 uppercase block mb-4">NASDAQ: AIH</span>
+            <span className="text-[10px] font-bold tracking-widest text-gray-400 uppercase block mb-4">-</span>
             <div className="flex flex-col items-center">
-              <span className="text-6xl md:text-8xl font-quicksand text-[#1a2b4b] font-light tracking-tight">19.36<span className="text-xl ml-2 uppercase text-gray-400 font-bold tracking-widest">USD</span></span>
-              <span className="text-2xl md:text-3xl font-quicksand text-green-600 mt-2">+0.77 (4.11%)</span>
+              <span className="text-6xl md:text-8xl font-quicksand text-[#1a2b4b] font-light tracking-tight">0.00<span className="text-xl ml-2 uppercase text-gray-400 font-bold tracking-widest">USD</span></span>
+              <span className="text-2xl md:text-3xl font-quicksand text-green-600 mt-2">+0.00 (0.00%)</span>
             </div>
           </div>
 
