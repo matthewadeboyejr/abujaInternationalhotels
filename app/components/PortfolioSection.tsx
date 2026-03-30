@@ -64,7 +64,7 @@ export default function PortfolioSection() {
 
           <div className="flex flex-col items-center justify-center p-10 md:border-r border-[#DC833D]/30 space-y-2 group hover:bg-white transition-colors">
             <span className="text-4xl md:text-5xl font-quicksand font-light text-[#DC833D] tracking-tight group-hover:scale-110 transition-transform">253</span>
-            <span className="text-[10px] md:text-xs font-bold font-quicksand tracking-[0.25em] uppercase text-[#1a2b4b]">Guest Rooms</span>
+            <span className="text-[10px] md:text-xs font-bold font-quicksand tracking-[0.25em] uppercase text-[#1a2b4b]">Rooms</span>
           </div>
           {/*  <div className="flex flex-col items-center justify-center p-10 space-y-2 group hover:bg-white transition-colors">
             <span className="text-4xl md:text-5xl font-quicksand font-light text-[#DC833D] tracking-tight group-hover:scale-110 transition-transform">5</span>
