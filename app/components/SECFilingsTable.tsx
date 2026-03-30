@@ -13,13 +13,13 @@ interface Filing {
 }
 
 const filings: Filing[] = [
-  { date: 'Mar 02, 2026', form: '4', description: 'Statement of changes in beneficial ownership of securities', group: '3,4,5', formats: ['html', 'pdf', 'xls', 'doc'] },
-  { date: 'Feb 27, 2026', form: '144', description: 'Filed by "insiders" prior intended sale of restricted stock.', group: 'Other', formats: ['html', 'pdf', 'doc'] },
-  { date: 'Feb 25, 2026', form: '10-K', description: 'Annual report which provides a comprehensive overview of the company for the past year', group: 'Annual Filings', formats: ['html', 'pdf', 'xls', 'doc'] },
-  { date: 'Feb 19, 2026', form: '4', description: 'Statement of changes in beneficial ownership of securities', group: '3,4,5', formats: ['html', 'pdf', 'xls', 'doc'] },
-  { date: 'Feb 19, 2026', form: '4', description: 'Statement of changes in beneficial ownership of securities', group: '3,4,5', formats: ['html', 'pdf', 'xls', 'doc'] },
-  { date: 'Feb 19, 2026', form: '4', description: 'Statement of changes in beneficial ownership of securities', group: '3,4,5', formats: ['html', 'pdf', 'xls', 'doc'] },
-  { date: 'Feb 18, 2026', form: '8-K', description: 'Report of unscheduled material events or corporate event', group: 'Current Reports', formats: ['html', 'pdf', 'xls', 'doc'] },
+  /*   { date: 'Mar 02, 2026', form: '4', description: 'Statement of changes in beneficial ownership of securities', group: '3,4,5', formats: ['html', 'pdf', 'xls', 'doc'] },
+    { date: 'Feb 27, 2026', form: '144', description: 'Filed by "insiders" prior intended sale of restricted stock.', group: 'Other', formats: ['html', 'pdf', 'doc'] },
+    { date: 'Feb 25, 2026', form: '10-K', description: 'Annual report which provides a comprehensive overview of the company for the past year', group: 'Annual Filings', formats: ['html', 'pdf', 'xls', 'doc'] },
+    { date: 'Feb 19, 2026', form: '4', description: 'Statement of changes in beneficial ownership of securities', group: '3,4,5', formats: ['html', 'pdf', 'xls', 'doc'] },
+    { date: 'Feb 19, 2026', form: '4', description: 'Statement of changes in beneficial ownership of securities', group: '3,4,5', formats: ['html', 'pdf', 'xls', 'doc'] },
+    { date: 'Feb 19, 2026', form: '4', description: 'Statement of changes in beneficial ownership of securities', group: '3,4,5', formats: ['html', 'pdf', 'xls', 'doc'] },
+    { date: 'Feb 18, 2026', form: '8-K', description: 'Report of unscheduled material events or corporate event', group: 'Current Reports', formats: ['html', 'pdf', 'xls', 'doc'] }, */
 ];
 
 export default function SECFilingsTable() {
@@ -40,7 +40,7 @@ export default function SECFilingsTable() {
           Below are the SEC filings for Abuja International Hotels, Inc., which are each required to file reports with the Securities and Exchange Commission.
         </p>
         <p className="text-xs md:text-sm text-gray-400 leading-relaxed font-sans italic border-l-2 border-[#DC833D] pl-6">
-           Abuja International Hotels, Inc. conducts all of its operations through its various subsidiaries and strategic partnerships across high-growth markets. This page provides a comprehensive library of all mandatory disclosures.
+          Abuja International Hotels, Inc. conducts all of its operations through its various subsidiaries and strategic partnerships across high-growth markets. This page provides a comprehensive library of all mandatory disclosures.
         </p>
       </div>
 
@@ -52,8 +52,8 @@ export default function SECFilingsTable() {
             <span className="text-2xl md:text-3xl font-serif text-[#1a2b4b]">SEC Filings Keyword</span>
             <div className="w-12 h-0.5 bg-[#DC833D] mb-4" />
             <div className="flex gap-4">
-              <input 
-                type="text" 
+              <input
+                type="text"
                 placeholder="Search..."
                 className="grow bg-white border border-gray-200 px-6 py-4 text-sm font-sans focus:outline-none focus:border-[#DC833D] transition-colors shadow-sm"
                 value={searchTerm}
@@ -134,7 +134,7 @@ export default function SECFilingsTable() {
             {/* Pagination */}
             <div className="p-8 flex justify-center items-center gap-2">
               <button className="w-8 h-8 flex items-center justify-center bg-[#1a2b4b] text-white text-xs font-bold rounded-sm">1</button>
-              {[2,3,4,5,6,7,8,9].map(num => (
+              {[2, 3, 4, 5, 6, 7, 8, 9].map(num => (
                 <button key={num} className="w-8 h-8 flex items-center justify-center text-gray-400 hover:text-[#1a2b4b] text-xs font-bold transition-colors">{num}</button>
               ))}
               <span className="text-gray-300 mx-2">...</span>
