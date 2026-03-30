@@ -19,7 +19,7 @@ export default function CareersSection() {
             transition={{ duration: 0.8 }}
             className="bg-[#1a2b4b] text-white p-12 md:p-20 text-center relative shadow-2xl"
           >
-            <h2 className="text-3xl md:text-5xl font-quicksand mb-8 tracking-tight">Explore a Career with Host</h2>
+            <h2 className="text-3xl md:text-5xl font-quicksand mb-8 tracking-tight">Explore a Career with Us</h2>
             <div className="w-24 h-px bg-[#DC833D] mx-auto mb-10" />
             <p className="max-w-2xl mx-auto text-sm md:text-base text-gray-300 font-sans leading-relaxed mb-4 md:mb-0">
               Our employees play an integral role in contributing to the company's success. The challenges, opportunities and our unique corporate culture are among the reasons to consider a career at Abuja International Hotels.

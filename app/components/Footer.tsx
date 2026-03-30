@@ -38,9 +38,7 @@ export default function Footer() {
           {/* Main Links Row */}
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
             <div className="flex flex-wrap items-center gap-8 md:gap-12">
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#DC833D] transition-colors">
-                <Linkedin className="w-6 h-6 fill-current" />
-              </a>
+
               <Link href="/site-map" className="text-sm font-bold tracking-widest uppercase hover:text-[#DC833D] transition-colors">Sitemap</Link>
               <Link href="/contact" className="text-sm font-bold tracking-widest uppercase hover:text-[#DC833D] transition-colors">Contact</Link>
               <Link href="/careers" className="text-sm font-bold tracking-widest uppercase hover:text-[#DC833D] transition-colors">Careers</Link>

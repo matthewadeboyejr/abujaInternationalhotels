@@ -238,7 +238,6 @@ export default function Navbar() {
 
                 {/* Social Icons */}
                 <div className="mt-12 flex items-center gap-6 text-[#1a2b4b]/60">
-                  <a href="#" className="hover:text-[#DC833D] transition-colors p-2 hover:bg-gray-50 rounded-full"><Linkedin className="w-5 h-5" /></a>
                   <a href="#" className="hover:text-[#DC833D] transition-colors p-2 hover:bg-gray-50 rounded-full"><Twitter className="w-5 h-5" /></a>
                   <a href="#" className="hover:text-[#DC833D] transition-colors p-2 hover:bg-gray-50 rounded-full"><Facebook className="w-5 h-5" /></a>
                 </div>
