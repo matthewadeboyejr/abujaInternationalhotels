@@ -20,7 +20,7 @@ export default function PortfolioSection() {
               Nicon Luxury<br />Abuja
             </h3>
             <span className="text-[#DC833D] font-sans text-[9px] md:text-[10px] font-bold tracking-[0.2em] uppercase">
-              Recent Acquisition
+              {/*  Recent Acquisition */}
             </span>
             <div className="w-12 h-px bg-[#1a2b4b]/20 mt-2 group-hover:bg-[#DC833D] transition-colors" />
           </div>
@@ -31,7 +31,7 @@ export default function PortfolioSection() {
               Abuja Regency<br />Resorts
             </h3>
             <span className="text-gray-400 font-sans text-[9px] md:text-[10px] font-bold tracking-[0.2em] uppercase">
-              Recent Acquisition
+              {/* Recent Acquisition */}
             </span>
           </div>
 
@@ -60,13 +60,13 @@ export default function PortfolioSection() {
         </div>
 
         {/* Middle Row: Statistics Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border-y border-[#DC833D]/30 mb-8 bg-gray-50/50">
-          <div className="flex flex-col items-center justify-center p-10 md:border-r border-[#DC833D]/30 space-y-2 group hover:bg-white transition-colors">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border-y border-[#DC833D]/30 mb-8 bg-gray-50/50">
+          {/* <div className="flex flex-col items-center justify-center p-10 md:border-r border-[#DC833D]/30 space-y-2 group hover:bg-white transition-colors">
             <span className="text-4xl md:text-5xl font-quicksand font-light text-[#DC833D] tracking-tight group-hover:scale-110 transition-transform">12</span>
             <span className="text-[10px] md:text-xs font-bold font-quicksand tracking-[0.25em] uppercase text-[#1a2b4b]">Strategic Properties</span>
-          </div>
+          </div> */}
           <div className="flex flex-col items-center justify-center p-10 md:border-r border-[#DC833D]/30 space-y-2 group hover:bg-white transition-colors">
-            <span className="text-4xl md:text-5xl font-quicksand font-light text-[#DC833D] tracking-tight group-hover:scale-110 transition-transform">3,500+</span>
+            <span className="text-4xl md:text-5xl font-quicksand font-light text-[#DC833D] tracking-tight group-hover:scale-110 transition-transform">253</span>
             <span className="text-[10px] md:text-xs font-bold font-quicksand tracking-[0.25em] uppercase text-[#1a2b4b]">Guest Rooms</span>
           </div>
           <div className="flex flex-col items-center justify-center p-10 space-y-2 group hover:bg-white transition-colors">

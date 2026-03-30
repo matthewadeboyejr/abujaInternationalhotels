@@ -39,8 +39,8 @@ export default function InvestorIntro() {
         <NewsBanner />
 
         {/* Financials & Ratings Bar */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center pt-16 border-t border-gray-100">
-          {/* Stock Price */}
+        {/*  <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center pt-16 border-t border-gray-100">
+         
           <div className="flex flex-col items-center md:items-start">
             <span className="text-xs font-bold tracking-[0.2em] text-gray-400 uppercase mb-4">Stock Price</span>
             <div className="flex items-baseline gap-3">
@@ -54,7 +54,7 @@ export default function InvestorIntro() {
             </div>
           </div>
 
-          {/* Credit Ratings */}
+      
           <div className="flex flex-col items-center md:items-start lg:pl-16">
             <span className="text-xs font-bold font-sans tracking-[0.2em] text-gray-400 uppercase mb-4">Investment Grade Credit Ratings</span>
             <div className="flex gap-8 md:gap-12">
@@ -66,7 +66,7 @@ export default function InvestorIntro() {
               ))}
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

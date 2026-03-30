@@ -14,7 +14,6 @@ const photos = [
     { src: '/fullview-main.png', alt: 'Skyline View' },
     { src: '/pool-img.png', alt: 'Luxury Swimming Pool' },
     { src: '/tennis.jpg', alt: 'Tennis Court' },
-
     { src: '/conference-img.jpg', alt: 'Conference Hall' },
     { src: '/spa-img.jpg', alt: 'Relaxing Spa & Wellness' },
     { src: '/fullview-2.png', alt: 'Skyline View' },
