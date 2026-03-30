@@ -4,7 +4,6 @@ import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ReduxProvider from "./lib/redux/provider";
-import { ThemeProvider } from "./components/ThemeProvider";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -85,18 +84,11 @@ export default function RootLayout({
       <body
         className={`${manrope.variable} ${quicksand.variable} ${sourceSans.variable} ${ebGaramond.variable} font-sans antialiased`}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <ReduxProvider>
-            <Navbar />
-            {children}
-            <Footer />
-          </ReduxProvider>
-        </ThemeProvider>
+        <ReduxProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </ReduxProvider>
       </body>
     </html>
   );
