@@ -32,15 +32,17 @@ export default function CorporateStrategyPage() {
             {/* Main Title Section */}
             <section className="max-w-4xl mx-auto px-6 md:px-12 pt-20 pb-16 text-center">
                 <h1 className="text-3xl md:text-5xl font-quicksand text-[#1a2b4b] mb-6 tracking-tight">
-                    People, Platform, Portfolio
+                    Corporate Strategy
                 </h1>
                 <p className="text-gray-700 text-sm md:text-[15px] font-medium leading-relaxed max-w-3xl mx-auto">
-                    Our goal is to generate best-in-class EBITDA growth to drive robust, long-term risk-adjusted returns for our stockholders. We believe our three pillars are the key to achieving our strategic objectives.
+                    Abuja International Hotels operate with a strategy that blends it’s physical location
+                    advantage with a philosophy of relentless guest satisfaction, ensuring it remains a
+                    cornerstone of Abuja hospitality sector
                 </p>
             </section>
 
             {/* Section 1: Geographically Diverse Portfolio */}
-            <section className="w-full bg-white pb-24">
+            {/*   <section className="w-full bg-white pb-24">
                 <div className="max-w-5xl mx-auto px-6 md:px-12 text-center">
 
                     <div className="flex flex-col items-center mb-12">
@@ -72,10 +74,10 @@ export default function CorporateStrategyPage() {
                     </div>
 
                 </div>
-            </section>
+            </section> */}
 
             {/* Section 2: Size, Scale and Reputation (Beige Background) */}
-            <section className="w-full bg-[#f4f3eb] py-24">
+            {/*   <section className="w-full bg-[#f4f3eb] py-24">
                 <div className="max-w-5xl mx-auto px-6 md:px-12 text-center">
 
                     <div className="flex flex-col items-center mb-12">
@@ -103,10 +105,10 @@ export default function CorporateStrategyPage() {
                     </div>
 
                 </div>
-            </section>
+            </section> */}
 
             {/* Section 3: Strong Balance Sheet */}
-            <section className="w-full bg-white pt-24 pb-12">
+            {/*   <section className="w-full bg-white pt-24 pb-12">
                 <div className="max-w-5xl mx-auto px-6 md:px-12 text-center">
 
                     <div className="flex flex-col items-center mb-12">
@@ -133,7 +135,7 @@ export default function CorporateStrategyPage() {
                         </div>
                     </div>
 
-                    {/* Footnotes */}
+                 
                     <div className="mt-12 text-center text-gray-500 text-[11px] leading-relaxed max-w-4xl mx-auto space-y-1">
                         <p>* Data as of February 20, 2024.</p>
                         <p>** Based on market cap as of December 31, 2023.</p>
@@ -141,7 +143,7 @@ export default function CorporateStrategyPage() {
                     </div>
 
                 </div>
-            </section>
+            </section> */}
 
             <InvestorMaterial />
         </main>
