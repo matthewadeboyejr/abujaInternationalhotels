@@ -107,7 +107,7 @@ export default function Navbar() {
           className="overflow-hidden border-r border-gray-100 whitespace-nowrap"
         >
           <Link href="/" className="px-4 md:px-6 py-0 md:py-4 hover:bg-gray-50 transition-colors flex items-center justify-center min-w-[120px] md:min-w-[140px] h-full">
-            <img src="/logo.png" alt="Abuja International" className="h-8 md:h-10 w-auto object-contain" />
+            <img src="/logo.png" alt="Abuja International" className="h-16 md:h-20 w-auto object-contain" />
           </Link>
         </motion.div>
 
