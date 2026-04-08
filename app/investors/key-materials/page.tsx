@@ -19,7 +19,7 @@ const annualMaterials = [
   '2025 Annual Report'
 ];
 
-interface KeyMaterial {
+export interface KeyMaterial {
   id: number,
   title: string,
   category: string,
