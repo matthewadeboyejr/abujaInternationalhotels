@@ -51,7 +51,7 @@ const faqData: FAQCategory[] = [
         question: 'WHERE CAN I GET THE LATEST CORPORATE NEWS RELEASES AND FINANCIAL REPORTS?',
         answer: (
           <p>
-            The company's news releases can be found on our website on the <a href="/investors/press-releases" className="text-[#DC833D] hover:underline font-bold">Press Releases</a> page.
+            The company's news releases can be found on our website on the <a href="/investors/corporate-actions" className="text-[#DC833D] hover:underline font-bold">Corporate Actions</a> page.
           </p>
         )
       },

@@ -7,20 +7,21 @@ import { useEffect, useState } from 'react';
 
 
 
-interface PressRelease {
-  id: number,
-  title: string,
-  slug: string,
-  date: string,
-  content: string,
-  is_active: number,
-  created_at: string,
-  updated_at: string
+interface CorporateAction {
+  id: number;
+  date: string;
+  category: string;
+  title: string;
+  summary: string;
+  content: string | null;
+  link_url: string | null;
+  created_at: string;
+  updated_at: string;
 }
 
 export default function NewsInvestorSection() {
 
-  const [pressReleases, setPressReleases] = useState<PressRelease[]>([]);
+  const [corporateActions, setCorporateActions] = useState<CorporateAction[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -30,12 +31,12 @@ export default function NewsInvestorSection() {
     const fetchMaterial = async () => {
       try {
         setIsLoading(true);
-        const response = await fetch('https://abujainternationhotel.jubileesystem.com/api/press-releases');
+        const response = await fetch('https://abujainternationhotel.jubileesystem.com/api/corporate-actions');
         if (!response.ok) {
-          throw new Error('Failed to fetch financial reports');
+          throw new Error('Failed to fetch corporate actions');
         }
-        const data: PressRelease[] = await response.json();
-        setPressReleases(data);
+        const data: CorporateAction[] = await response.json();
+        setCorporateActions(data);
         setError(null);
       } catch (err) {
         console.error('Error fetching reports:', err);
@@ -57,14 +58,14 @@ export default function NewsInvestorSection() {
         <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16">
           {/* Top Row: News Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-1 gap-16">
-            {/* Press Releases */}
+            {/* Corporate Actions */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-2xl md:text-3xl font-serif text-[#1a2b4b] mb-4">Press Releases</h2>
+              <h2 className="text-2xl md:text-3xl font-serif text-[#1a2b4b] mb-4">Corporate Actions</h2>
               <div className="w-24 h-px bg-[#DC833D] mb-12" />
               <div className="space-y-10">
                 {isLoading ? (
@@ -76,7 +77,7 @@ export default function NewsInvestorSection() {
                     className="flex flex-col items-center justify-center py-20 space-y-4"
                   >
                     <div className="w-12 h-12 border-t-2 border-b-2 border-[#DC833D] rounded-full animate-spin" />
-                    <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-gray-400">Loading Reports...</p>
+                    <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-gray-400">Loading...</p>
                   </motion.div>
                 ) : error ? (
                   <motion.div
@@ -94,11 +95,11 @@ export default function NewsInvestorSection() {
                       Retry
                     </button>
                   </motion.div>
-                ) : pressReleases.length > 0 ? (
-                  pressReleases.map((news, index) => (
+                ) : corporateActions.length > 0 ? (
+                  corporateActions.map((news, index) => (
                     <div key={index} className="group cursor-pointer">
                       <span className="text-[10px] md:text-xs font-bold font-quicksand tracking-[0.2em] text-[#DC833D] block mb-2">
-                        {news.date}
+                        {news.date} | {news.category}
                       </span>
                       <p className="text-sm md:text-base font-sans text-gray-800 leading-snug group-hover:text-[#DC833D] transition-colors">
                         {news.title}
@@ -107,12 +108,12 @@ export default function NewsInvestorSection() {
                   ))
                 ) : (
                   <div className="text-center py-20 text-gray-400 font-sans italic">
-                    No press releases found for the selected filters.
+                    No corporate actions found.
                   </div>
                 )}
               </div>
-              <Link href="/news" className="inline-flex items-center text-[10px] md:text-xs font-bold font-quicksand tracking-[0.3em] uppercase text-[#1a2b4b] mt-12 group">
-                Press Releases <ArrowRight className="ml-3 w-4 h-4 text-[#DC833D] group-hover:translate-x-1 transition-transform" />
+              <Link href="/investors/corporate-actions" className="inline-flex items-center text-[10px] md:text-xs font-bold font-quicksand tracking-[0.3em] uppercase text-[#1a2b4b] mt-12 group">
+                Corporate Actions <ArrowRight className="ml-3 w-4 h-4 text-[#DC833D] group-hover:translate-x-1 transition-transform" />
               </Link>
             </motion.div>
 

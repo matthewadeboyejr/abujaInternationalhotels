@@ -56,7 +56,7 @@ export default function KeyMaterialsSection() {
                 </div>
             </div>
 
-            {/* Press Releases Section (Immediately Following) */}
+            {/* Corporate Actions Section (Immediately Following) */}
             <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 py-32 ">
                 <motion.h2
                     initial={{ opacity: 0, y: 20 }}
@@ -64,7 +64,7 @@ export default function KeyMaterialsSection() {
                     viewport={{ once: true }}
                     className="text-3xl md:text-5xl font-quicksand text-[#1a2b4b] text-center mb-16"
                 >
-                    Press Releases
+                    Corporate Actions
                 </motion.h2>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12 mb-16">
@@ -89,7 +89,7 @@ export default function KeyMaterialsSection() {
 
                 <div className="text-center pt-8 border-t border-[#DC833D]">
                     <Link
-                        href="/investors/press-releases"
+                        href="/investors/corporate-actions"
                         className="inline-flex items-center text-[10px] md:text-xs font-bold tracking-[0.3em] uppercase text-[#1a2b4b] group"
                     >
                         View All <ArrowRight className="ml-3 w-4 h-4 text-[#DC833D] group-hover:translate-x-1 transition-transform" />

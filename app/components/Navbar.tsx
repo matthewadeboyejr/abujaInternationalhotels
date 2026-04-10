@@ -18,7 +18,7 @@ const mainMenuItems = [
       { title: 'SEC Filings', href: '/investors/results?tab=sec-filings' },
       { title: 'Annual Reports', href: '/investors/results?tab=annual-reports' },
       { title: 'Stock Information ', href: '/investors/stock-information' },
-      { title: 'Press Releases/ News ', href: '/investors/press-releases' },
+      { title: 'Corporate Action', href: '/investors/corporate-actions' },
       // { title: 'FAQs', href: '/investors/faqs' },
       { title: 'Key Investor Materials ', href: '/investors/key-materials' },
 

@@ -7,20 +7,21 @@ import Navbar from '@/app/components/Navbar';
 import Breadcrumbs from '@/app/components/Breadcrumbs';
 import InvestorMaterial from '@/app/components/InvestorMaterial';
 
-interface PressRelease {
-  id: number,
-  title: string,
-  slug: string,
-  date: string,
-  content: string,
-  is_active: number,
-  created_at: string,
-  updated_at: string
+interface CorporateAction {
+  id: number;
+  date: string;
+  category: string;
+  title: string;
+  summary: string;
+  content: string | null;
+  link_url: string | null;
+  created_at: string;
+  updated_at: string;
 }
 
 
-export default function PressReleasesPage() {
-  const [pressReleases, setPressReleases] = useState<PressRelease[]>([]);
+export default function CorporateActionsPage() {
+  const [corporateActions, setCorporateActions] = useState<CorporateAction[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -30,12 +31,12 @@ export default function PressReleasesPage() {
     const fetchMaterial = async () => {
       try {
         setIsLoading(true);
-        const response = await fetch('https://abujainternationhotel.jubileesystem.com/api/press-releases');
+        const response = await fetch('https://abujainternationhotel.jubileesystem.com/api/corporate-actions');
         if (!response.ok) {
-          throw new Error('Failed to fetch financial reports');
+          throw new Error('Failed to fetch corporate actions');
         }
-        const data: PressRelease[] = await response.json();
-        setPressReleases(data);
+        const data: CorporateAction[] = await response.json();
+        setCorporateActions(data);
         setError(null);
       } catch (err) {
         console.error('Error fetching reports:', err);
@@ -61,7 +62,7 @@ export default function PressReleasesPage() {
         <div className="absolute inset-0 z-0">
           <img
             src="/pool-img.png"
-            alt="Press Releases Hero"
+            alt="Corporate Actions Hero"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black/40" />
@@ -73,12 +74,12 @@ export default function PressReleasesPage() {
           { title: 'Home', href: '/' },
           { title: 'Investor Relations', href: '/investors/overview' }
         ]}
-        currentPage="Press Releases"
+        currentPage="Corporate Action"
       />
 
       <section className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 py-20 text-center">
         <h1 className="text-4xl md:text-6xl font-quicksand text-[#1a2b4b] mb-16">
-          All Press Releases
+          All Corporate Actions
         </h1>
 
 
@@ -114,10 +115,10 @@ export default function PressReleasesPage() {
                   </button>
                 </motion.div>
               ) :
-                pressReleases.length > 0 ? (
-                  pressReleases.map((release) => (
+                corporateActions.length > 0 ? (
+                  corporateActions.map((action) => (
                     <motion.div
-                      key={release.id}
+                      key={action.id}
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
@@ -126,26 +127,24 @@ export default function PressReleasesPage() {
                       <div className="flex justify-between items-start gap-8">
                         <div className="flex-1">
                           <span className="text-[10px] font-bold tracking-widest text-gray-400 uppercase block mb-4">
-                            {release.date}
+                            {action.date} | {action.category}
                           </span>
-                          <h3 className="text-lg md:text-xl font-sans text-[#1a2b4b] leading-relaxed mb-4">
-                            {release.title}
+                          <h3 className="text-lg md:text-xl font-sans text-[#1a2b4b] leading-relaxed mb-2">
+                            {action.title}
                           </h3>
+                          <p className="text-sm font-sans text-gray-500 mb-4 leading-relaxed line-clamp-2">
+                            {action.summary}
+                          </p>
                           <button className="text-[10px] font-bold tracking-widest text-[#DC833D] uppercase hover:underline">
                             Read More
                           </button>
                         </div>
-                        {/* {release.hasPdf && (
-                      <div className="pt-2">
-                        <FileText className="w-8 h-8 text-red-500/30 hover:text-red-500 transition-colors cursor-pointer" />
-                      </div>
-                    )} */}
                       </div>
                     </motion.div>
                   ))
                 ) : (
                   <div className="text-center py-20 text-gray-400 font-sans italic">
-                    No press releases found for the selected filters.
+                    No corporate actions found for the selected filters.
                   </div>
                 )}
           </AnimatePresence>
