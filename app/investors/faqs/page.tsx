@@ -56,14 +56,6 @@ const faqData: FAQCategory[] = [
         )
       },
       {
-        question: 'HOW CAN I VIEW DOCUMENTS ABUJA INTERNATIONAL HOTELS, INC. HAS FILED WITH THE SECURITIES & EXCHANGE COMMISSION (SEC)?',
-        answer: (
-          <p>
-            The company's filings can be found on our website on the <a href="/investors/results?tab=sec-filings" className="text-[#DC833D] hover:underline font-bold">SEC Filings</a> page.
-          </p>
-        )
-      },
-      {
         question: 'HOW CAN I GET MORE INFORMATION ABOUT ABUJA INTERNATIONAL HOTELS, INC. SUCH AS AN INVESTOR INFORMATION PACKET?',
         answer: (
           <p>

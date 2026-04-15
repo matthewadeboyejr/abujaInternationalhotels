@@ -15,12 +15,12 @@ const mainMenuItems = [
     submenu: [
       { title: 'Investor Overview', href: '/investors/overview' },
       { title: 'Quarterly Results', href: '/investors/results?tab=quarterly-results' },
-      { title: 'SEC Filings', href: '/investors/results?tab=sec-filings' },
+
       { title: 'Annual Reports', href: '/investors/results?tab=annual-reports' },
       { title: 'Stock Information ', href: '/investors/stock-information' },
-      { title: 'Corporate Action', href: '/investors/corporate-actions' },
+      { title: 'Corporate Actions & Announcements', href: '/investors/corporate-actions' },
       // { title: 'FAQs', href: '/investors/faqs' },
-      { title: 'Key Investor Materials ', href: '/investors/key-materials' },
+      //{ title: 'Key Investor Materials ', href: '/investors/key-materials' },
 
     ],
   },

@@ -8,7 +8,6 @@ interface ResultsTabsProps {
 }
 
 const tabs = [
-  { id: 'sec-filings', label: 'SEC FILINGS' },
   { id: 'annual-reports', label: 'ANNUAL REPORTS' },
   { id: 'quarterly-results', label: 'QUARTERLY RESULTS' },
 ];

@@ -6,7 +6,6 @@ import Image from 'next/image';
 import Navbar from '@/app/components/Navbar';
 import ResultsTabs from '@/app/components/ResultsTabs';
 import QuarterlyList from '@/app/components/QuarterlyList';
-import SECFilingsTable from '@/app/components/SECFilingsTable';
 import Breadcrumbs from '@/app/components/Breadcrumbs';
 import { Rss, Mail, User, Printer } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -35,16 +34,7 @@ interface FinancialReport {
   created_at: string;
 }
 
-const secFilingsData: QuarterGroup[] = [
-  {
-    quarter: '2026 Filings',
-    items: [
-      { date: '3/15/26', title: 'Form 8-K: Current Report', type: 'pdf', href: '#' },
-      { date: '2/20/26', title: 'Form 10-K: Annual Report', type: 'pdf', href: '#' },
-      { date: '1/12/26', title: 'Form 8-K: Current Report', type: 'pdf', href: '#' },
-    ],
-  },
-];
+
 
 import { Suspense } from 'react';
 
@@ -77,7 +67,7 @@ function FinancialReportsContent() {
     fetchReports();
 
     const tab = searchParams.get('tab');
-    if (tab && ['sec-filings', 'annual-reports', 'quarterly-results'].includes(tab)) {
+    if (tab && ['annual-reports', 'quarterly-results'].includes(tab)) {
       setActiveTab(tab);
     }
   }, [searchParams]);
@@ -122,8 +112,7 @@ function FinancialReportsContent() {
     const quarterlyReports = reports.filter(r => r.type === 'quarterly');
 
     switch (activeTab) {
-      case 'sec-filings':
-        return { title: 'SEC Filings', data: secFilingsData };
+
       case 'annual-reports':
         return { title: 'Annual Reports', data: transformToGroups(annualReports) };
       default:
@@ -221,11 +210,7 @@ function FinancialReportsContent() {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.4 }}
             >
-              {activeTab === 'sec-filings' ? (
-                <SECFilingsTable />
-              ) : (
-                <QuarterlyList groups={data} />
-              )}
+              <QuarterlyList groups={data} />
             </motion.div>
           )}
         </AnimatePresence>

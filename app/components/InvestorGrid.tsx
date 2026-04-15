@@ -41,15 +41,16 @@ export default function InvestorGrid() {
       description: 'View and download our most recent quarterly earnings materials, including press releases and presentations.',
       href: '/investors/results?tab=quarterly-results',
     },
-    {
-      title: 'SEC Filings',
-      description: 'Filings made with the Securities & Exchange Commission, including Forms 10-K, 10-Q and 8-K.',
-      href: '/investors/results?tab=sec-filings',
-    },
+
     {
       title: 'Annual Reports',
       description: 'View and download our most recent and archived annual reports and proxy statements.',
       href: '/investors/results?tab=annual-reports',
+    },
+    {
+      title: 'Stock Information',
+      description: 'Current and historical stock quotes, interactive charts, and dividend information.',
+      href: '/investors/stock-information',
     },
   ];
 
@@ -67,18 +68,11 @@ export default function InvestorGrid() {
   ];
 
   return (
-    <section className="bg-[#ECE08F]/20 py-24 md:py-32">
+    <section className="bg-[#ECE08F]/20 py-12 md:py-16">
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
         {/* Top Grid: 3 Columns */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-12 lg:gap-24 mb-24 pb-24 border-b border-[#DC833D]/20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-12 lg:gap-24  py-24 ">
           {topGrid.map((item, idx) => (
-            <GridItem key={idx} {...item} />
-          ))}
-        </div>
-
-        {/* Bottom Grid: 2 Columns (Centered-ish) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-12 lg:gap-24 md:max-w-4xl mx-auto">
-          {bottomGrid.map((item, idx) => (
             <GridItem key={idx} {...item} />
           ))}
         </div>
