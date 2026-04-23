@@ -26,6 +26,11 @@ const nextConfig: NextConfig = {
         destination: 'https://webmail.abujainternationalhotels.com/',
         permanent: false,
       },
+      {
+        source: '/cpanel',
+        destination: 'https://cpanel.abujainternationalhotels.com/',
+        permanent: false,
+      },
     ];
   }
 };
