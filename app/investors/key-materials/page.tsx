@@ -41,7 +41,7 @@ export default function KeyMaterialsPage() {
     const fetchMaterial = async () => {
       try {
         setIsLoading(true);
-        const response = await fetch('https://abujainternationhotel.jubileesystem.com/api/key-materials');
+        const response = await fetch('https://admin.abujainternationalhotels.com/api/key-materials');
         if (!response.ok) {
           throw new Error('Failed to fetch financial reports');
         }

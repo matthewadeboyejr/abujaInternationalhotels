@@ -31,7 +31,7 @@ export default function CorporateActionsPage() {
     const fetchMaterial = async () => {
       try {
         setIsLoading(true);
-        const response = await fetch('https://abujainternationhotel.jubileesystem.com/api/corporate-actions');
+        const response = await fetch('https://admin.abujainternationalhotels.com/api/corporate-actions');
         if (!response.ok) {
           throw new Error('Failed to fetch corporate actions');
         }

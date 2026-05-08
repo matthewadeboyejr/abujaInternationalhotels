@@ -25,7 +25,7 @@ export default function PhotoGalleryPage() {
         const fetchPhotos = async () => {
             try {
                 setIsLoading(true);
-                const response = await fetch('https://abujainternationhotel.jubileesystem.com/api/gallery');
+                const response = await fetch('https://admin.abujainternationalhotels.com/api/gallery');
                 if (!response.ok) {
                     throw new Error('Failed to fetch gallery data');
                 }

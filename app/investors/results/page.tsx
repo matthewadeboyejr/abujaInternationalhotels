@@ -49,7 +49,7 @@ function FinancialReportsContent() {
     const fetchReports = async () => {
       try {
         setIsLoading(true);
-        const response = await fetch('https://abujainternationhotel.jubileesystem.com/api/financial-reports');
+        const response = await fetch('https://admin.abujainternationalhotels.com/api/financial-reports');
         if (!response.ok) {
           throw new Error('Failed to fetch financial reports');
         }

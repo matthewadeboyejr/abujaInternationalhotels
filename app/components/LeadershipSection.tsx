@@ -30,7 +30,7 @@ export default function LeadershipSection() {
         const fetchData = async () => {
             try {
                 setIsLoading(true);
-                const response = await fetch('https://abujainternationhotel.jubileesystem.com/api/leadership');
+                const response = await fetch('https://admin.abujainternationalhotels.com/api/leadership');
                 if (!response.ok) {
                     throw new Error('Failed to fetch leadership data');
                 }
@@ -48,8 +48,8 @@ export default function LeadershipSection() {
         fetchData();
     }, []);
 
-    const activeData = activeTab === 'board' 
-        ? data?.board_of_director || [] 
+    const activeData = activeTab === 'board'
+        ? data?.board_of_director || []
         : data?.management_team || [];
 
     const truncateBio = (text: string, limit: number = 250) => {
@@ -110,7 +110,7 @@ export default function LeadershipSection() {
                                 className="text-center py-20"
                             >
                                 <p className="text-red-500 mb-4">{error}</p>
-                                <button 
+                                <button
                                     onClick={() => window.location.reload()}
                                     className="text-[#DC833D] text-[10px] font-bold tracking-[0.2em] uppercase hover:underline"
                                 >
