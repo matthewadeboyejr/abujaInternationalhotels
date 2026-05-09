@@ -15,6 +15,10 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: 'https',
+        hostname: 'admin.abujainternationalhotels.com',
+      },
+      {
+        protocol: 'https',
         hostname: 'abujainternationhotel.jubileesystem.com',
       },
     ],
